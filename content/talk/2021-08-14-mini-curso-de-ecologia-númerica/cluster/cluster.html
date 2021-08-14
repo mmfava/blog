@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>cluster.knit</title>
+    <meta charset="utf-8" />
+    <script src="cluster_files/header-attrs-2.8/header-attrs.js"></script>
+    <script src="cluster_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="cluster_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: clear
+background-image: url(fig/Slide1.PNG)
+background-size: 1200px
+
+&lt;style type="text/css"&gt;
+h2 { color: brown; }
+&lt;/style&gt;
+
+
+---
+class: clear
+background-image: url(fig/Slide2.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide3.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide4.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide5.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide6.PNG)
+background-size: 1200px
+
+---
+.center[
+# Atividade
+]
+
+&lt;div class="background" style="width: 1100px; height: 520px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+.center[
+&lt;img src="atv.png" style="width:100%;"&gt;
+]
+
+---
+class: clear
+background-image: url(fig/Slide7.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide8.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide9.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide10.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide11.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide12.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide13.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide14.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide15.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide16.PNG)
+background-size: 1200px
+
+---
+class: clear
+background-image: url(fig/Slide17.PNG)
+background-size: 1200px
+
+---
+# No R
+
+## A atividade
+
+- Uma pesquisadora 'X' contabilizou o número de indivíduos/espécie em cinco distintas áreas de conservação.
+
+- O projeto da Dra. 'X' visa comparar essas áreas quanto a estes valores, com a finalidade de descobrir quais áreas são mais semelhantes quanto a composição de espécies.
+
+
+## Instalar e carregar os pacotes necessários
+
+```r
+# Instalação
+install.packages("vegan")
+install.packages("kableExtra")
+
+# Carregando os pacotes
+library(vegan)
+library(kableExtra)
+```
+
+
+
+---
+# No R
+
+## Dados amostrados
+
+### Criando a matriz de dados (comando 'matrix')
+
+```r
+P1 = matrix(c(0, 0, 10, 8, 0, 0, 0, 12, 9, 0, 0, 0, 13, 5, 10, 2, 3, 0, 4, 12, 5, 10, 0, 0, 16, 15, 20, 0, 0, 0), nrow = 6, byrow = 5)
+```
+
+### Nome nas colunas/linhas da matriz 
+- colunas: 'colnames(nome da matriz)'
+- linhas: 'rownames (nome das linhas)'
+
+
+```r
+colnames(P1)=c("A", "B", "C", "D","E")
+rownames(P1)=c("Local 1", "Local 2", "Local 3", "Local 4", "Local 5","Local 6")
+```
+
+---
+# No R
+
+## Dados amostrados
+
+### Versão final da nossa matriz/tabela
+
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+P1 %&gt;% kbl() %&gt;%
+   kable_material(c("striped", "hover"), font_size = 20)
+```
+
+&lt;table class=" lightable-material lightable-striped lightable-hover" style='font-size: 20px; font-family: "Source Sans Pro", helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; C &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; D &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; E &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Local 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Local 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Local 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Local 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Local 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Local 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# No R
+
+## Distância
+
+### Matriz com **distância euclidiana**
+
+- Criar a matriz de similaridade/dissimilaridade ~ mas qual distância utilizar?
+- Existem dois comandos para uso com o `vegan` ~ `dist()` e o `vegdist()`.
+
+
+
+```r
+eu = vegdist(P1, method = "euclidean", binary = F)
+
+eu
+```
+
+```
+##           Local 1   Local 2   Local 3   Local 4   Local 5
+## Local 2  2.236068                                        
+## Local 3 10.862780 10.816654                              
+## Local 4 16.522712 18.055470 13.674794                    
+## Local 5 23.345235 24.617067 18.841444  9.486833          
+## Local 6 28.089144 29.154759 30.315013 24.859606 21.354157
+```
+
+---
+# No R
+
+## Dendograma 
+
+### Método do vizinho mais próximo ("Single linkage")
+
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Comando de criação de hirarquia cluster via metodo do vizinho mais próximo
+vizinhop = hclust(eu, method = "single")
+
+# Gráfico
+plot(vizinhop, main = "Método do vizinho mais próximo", sub = "",
+     ylab = "Distância euclidiana", xlab = "Locais", hang = -1)
+```
+
+![](cluster_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+---
+# No R
+
+## Dendograma 
+
+### Método do vizinho mais próximo ("Single linkage")
+
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Gráfico
+plot(vizinhop, main = "Método do vizinho mais próximo", sub = "",
+     ylab = "Distância euclidiana", xlab = "Locais", hang = -1)
+
+# 3 grupos cluster
+rect.hclust(vizinhop, k=3, border="red")
+```
+
+![](cluster_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+---
+# No R
+
+## Dendograma 
+
+### Método da ligação completa ou do vizinho mais distante ("Complete linkage") 
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Comando de criação de hierarquia cluster via método do vizinho mais distante
+vizinhod = hclust(eu, method = "complete") 
+
+# Gráfico
+plot(vizinhod, main = "Método do vizinho mais distante", sub = "",
+     ylab = "Distância euclidiana", xlab = "Locais", hang = -1) 
+```
+
+![](cluster_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+
+---
+# No R
+
+## Dendograma 
+
+### Método da ligação completa ou do vizinho mais distante ("Complete linkage") 
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Gráfico
+plot(vizinhod, main = "Método do vizinho mais distante", sub = "",
+     ylab = "Distância euclidiana", xlab = "Locais", hang = -1) 
+
+# 3 grupos cluster
+rect.hclust(vizinhod, k = 3, border = "red")
+```
+
+![](cluster_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+
+---
+# No R
+
+## Dendograma 
+
+### Método da ligação média ("Average linkage")
+
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Comando de criação de hierarquia cluster via método do vizinho mais distante
+media = hclust(eu, method = "average")
+
+# Gráfico
+plot(media, main="Método da ligação média", sub="",
+     ylab="Distância euclidiana", xlab="Locais", hang = -1)
+```
+
+![](cluster_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+---
+# No R
+
+## Dendograma 
+
+### Método da ligação média ("Average linkage")
+
+&lt;div style="width: 1105px; height: 405px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Gráfico
+plot(media, main="Método da ligação média", sub="",
+     ylab="Distância euclidiana", xlab="Locais", hang = -1)
+
+# 3 grupos cluster
+rect.hclust(media, k=3, border="red")
+```
+
+![](cluster_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+
+---
+# No R
+
+## O cluster 
+
+### Mas qual cluster escolher? **Vamos avaliar!**
+
+#### Coeficiente de Correlação Cofenética
+
+O coeficiente de correlação linear de Pearson entre os elementos da matriz de dissimilaridade (matriz de distâncias obtida dos dados) e os elementos da matriz cofenética (matriz de distâncias obtida a partir do dendrograma) é denominado *coeficiente de correlação cofenética*. 
+
+---
+# No R
+
+## O cluster 
+
+### Mas qual cluster escolher? **Vamos avaliar!**
+
+#### Coeficiente de Correlação Cofenética
+
+&lt;div style="width: 1105px; height: 385px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;"&gt;
+
+
+```r
+# Vizinho mais próximo
+cor.test(eu, cophenetic(vizinhop))$estimate
+```
+
+```
+##       cor 
+## 0.8985643
+```
+
+```r
+# Método da ligação completa
+cor.test(eu, cophenetic(vizinhod))$estimate
+```
+
+```
+##       cor 
+## 0.9070452
+```
+
+```r
+# Método da ligação média
+cor.test(eu, cophenetic(media))$estimate
+```
+
+```
+##       cor 
+## 0.9236304
+```
+
+---
+class: clear
+background-image: url(fig/Slide18.PNG)
+background-size: 1200px
+
+---
+.center[
+# OBRIGADA!!
+
+&lt;img src="https://www.mmfava.com/marilia.png" style="width:20%;"&gt;
+
+## Marília Melo Favalesso
+
+&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"&gt;&lt;/path&gt;&lt;/svg&gt; [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"&gt;&lt;/path&gt;&lt;/svg&gt; [www.mmfava.com](www.mmfava.com)
+&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; [Twitter: @mmfbee](https://twitter.com/mmfbee)
+&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [Github: mmfava](https://github.com/mmfava)
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

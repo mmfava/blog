@@ -1,0 +1,2538 @@
+---
+title: "Herramientas eco-epidemiológicas para la vigilancia de los accidentes por animales venenosos"
+subtitle: "Con énfasis en la epidemiología espacial"
+author: "**Marília Melo Favalesso**"  
+institute: 
+  - "Consejo Nacional de Investigaciones Científicas y Técnicas - CONICET"
+  - "Instituto Nacionl de Medicina Tropical da Argentina - INMeT"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+    includes:
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+background-image: url(https://www.mmfava.com/marilia.PNG)
+background-size: 300px
+background-position: 90% 5%
+
+```{r setup, include=FALSE}
+# xaringan::inf_mr()
+
+options(htmltools.dir.version = FALSE)
+
+knitr::opts_chunk$set(
+	echo = TRUE,
+	fig.show = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	hiline = TRUE,
+	out.width = "100%"
+)
+
+library(xaringanthemer)
+style_mono_accent(base_font_size = 15)
+```
+
+# Hola!
+
+## Marília Melo Favalesso 
+
+**Formação**
+- Técnica ambiental (CEEP, BR, 2009)
+- Bióloga (UFPR, BR, 2014)
+- Maestría en Ciencias Ambientales (UNIOESTE, BR, 2018)
+- Estudiante de doctorado en Ecología, Genética y Evolución (UBA, AR, actual)
+
+**Contatos**
+
+- `r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#000000")` [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+- `r icons::icon_style(icons::fontawesome("globe-americas", style = "solid"), fill = "#000000")` [www.mmfava.com](www.mmfava.com)
+- `r icons::icon_style(icons::fontawesome("twitter"), fill = "#000000")` [Twitter: @mmfbee](https://twitter.com/mmfbee)
+- `r icons::icon_style(icons::fontawesome("github"), fill = "#000000")` [Github: mmfava](https://github.com/mmfava)
+
+---
+# Contenido
+
+[1. Epidemiología](#epidemio) 
+<br>
+
+[2.  Eco-epidemiología](#ecoepidemio) 
+<br>
+
+[3. Vigilancia epidemiológica](#vigilancia) 
+<br>
+
+[4. Animales venenosos](#anim) 
+<br>
+
+[5. Animales venenosos y medio ambiente](#animma)
+<br>
+
+[6. (Eco-)epidemiología espacial](#espacial)
+<br>
+
+[7. Ejemplos de trabajo con animales venenosos](#ejemplo)
+
+---
+name: epidemio
+
+# Epidemiología
+
+- La epidemiología es el estudio de la ocurrencia y **distribución** de **eventos, estados y procesos** relacionados con la salud en **poblaciones específicas**, incluyendo el estudio de los **determinantes** que influyen en estos procesos y la **aplicación de este conocimiento** para controlar los problemas de salud relevantes ([Porta 2014](https://www.amazon.com.br/Dictionary-Epidemiology-Miquel-Porta/dp/0199976732)).
+
+.center[
+<img src='https://image.freepik.com/vetores-gratis/pesquisa-de-coronavirus-pandemia-conceito-de-epidemiologia_74855-5785.jpg' style="width:50%;">
+]
+
+<!---
+A epidemiologia é o estudo da ocorrência e distribuição de eventos, estados e processos relacionados a saúde de uma população específica, incluindo o estudo dos determinantes que influem nestes processos e a aplicação desse conhecimento para controlar os problemas de saude relevantes. 
+
+Destaquei algumas palavras que considero chaves quando se trata de definir o que é epidemiologia:
+
+Quando falamos sobre a "distribuição de eventos, estados e processos relacionados com a saúde de populações especificas", estamos falando sobre surtos, doenças, agravos, causas de morte, comportamento, processos ambientais e sociodemograficos, de programas de prevenção etc no tempo, espaço ou população. 
+
+**Populações especificadas** são aqueles com contextos comuns e características identificáveis. 
+
+**Determinante**: Factores geofísicos, biológicos, conductuales, sociales, culturales, económicos o políticos que influyen en la salud.
+
+**Aplicativo para controlar** torna explícito o objetivo da epidemiologia - promover, proteger e restaurar a saúde, e para avançar o conhecimento científico. 
+
+-->
+
+
+---
+# Epidemiología
+
+.center[
+<img src="fig/susserandsusser.PNG" style="width:65%;">
+]
+
+- A lo largo de su historia, la epidemiología ha experimentado numerosos desarrollos metodológicos y conceptuales, así como cambios en la escala en la que los epidemiólogos enfocan su investigación. En consecuencia, se caracterizó por su época, tiendo 3 eras principales (Susser & Susser [1996a](https://ajph.aphapublications.org/doi/pdf/10.2105/AJPH.86.5.668), [1996b](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf)):
+  - Estadísticas sanitarias (paradigma del miasma)
+  - Epidemiología de las enfermedades infecciosas (paradigma de la teoría de los gérmenes)
+  - Epidemiología de las enfermedades crónicas ("caja negra" o paradigma de factores de riesgo)
+  
+- [Susser & Susser (1996)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf) aún vislumbran un futuro cierre de la era de las enfermedades crónicas, que daría lugar a una nueva etapa marcada por la **Ecoepidemiológica**.
+
+<!---
+Ao longo da história de epidemiologia, essa disciplina passou por inúmeros desenvolvimentos metodológicos e conceituais, bem como mudanças na escala em que epidemiologistas concentram suas pesquisas (nível do indivíduo, nível da população, etc). 
+
+Susser & Susser (1996a, 1996b) analisam a evolução da epidemiologia moderna através de três eras, considerando que cada uma delas teria um paradigma dominante característico que seria responsável pela definição da abordagem preventiva de cada era. 
+
+- Assim, a primeira foi representada pelas estatísticas sanitárias que teve como paradigma o miasma. 
+
+Esse paradigma foi formulado por Sydenham e Lancisi no seculo 17 e tinha como base a ideia que as doenças seriam provenientes de matéria orgânica em putrefação nos solos e lençóis freáticos contaminados. Especificamente, seriam os cheiros os responsáveis pela causa de doenças. Hoje a miasmática é considerada absoleta, ao ser consensual e aceita a teoria microbiana (que é a a segunda era).
+
+- Na segunda estaria a epidemiologia das doenças infecciosas trazendo a teoria do germe como paradigma dominante. 
+
+A teoria microbiana das doenças é uma teoria científica que estabelece que os microorganismos são a causa de inúmeras doenças. Embora bastante controversa quando inicialmente proposta, a teoria microbiana foi confirmada no final do século XIX e é hoje parte integrante da microbiologia clínica e medicina modernas, estando na origem de inovações importantes como os antibióticos e hábitos de higiene.
+
+- A terceira era, considera como a atual no tempo de publicação do paper, é caracterizada pela epidemiologia das doenças crônicas que teria como paradigma a caixa preta, que simboliza o paradigma da epidemiologia dos fatores de risco para as doenças crônicas. 
+
+Ela se firmou quando foram registrados estudos de caso-controle e coorte sobre a relaçaõ entre o câncer de pulmão e o ato de furmar, bem como os primeiros estudos sobre a doença coronariana, que definiram o colesterl sério e o fumo como fatores de risco, desmontrando o poder do método observacional. 
+
+O problema desse pardigma foi o 'imprimatur' - o que define o paradigma - que seria relacionar a expsição ao resultados sem que isso implicasse na obrigação de interpolar fatores intermediários, ou mesmo a patogênese.
+
+Susser e Susser previram um futuro fechamento desta terceira era, que daria lugar a uma nova etapa marcada pela eco-epidemiologia, onde o desdobramento em um paradigma diferente se tornará essencial. 
+
+-->
+
+---
+name: ecoepidemio
+
+# Eco-epidemiología
+
+## La necesidad de un nuevo paradigma
+
+.center[
+<img src="fig/Slide53.PNG" style="width:68%;">
+
+([Susser & Susser 1996](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf))
+]
+
+<!---
+Para exemplificar a necessidade de um novo paradigma, os autores citam como exemplo a epidemia do HIV que precisou ser pensando em diferentes niveis de análise: desde o molecular (como a doença se deciminava de uma pessa a outra e como interromper isso), ao nível intermedio (comportamento dos individuos em nivel social, dentro de suas comunidades) e ao nível populacional (em que a dinamica da epidemia é governada pela propria prevalencia bem como por outras caracteristicas da população). 
+
+Os autores falam que, como investigadores, nós estamos condicionados pelas nossas capacidades e pela necessidade a tender ao reducionismo, fazendo a ligação entre uma única coisa e outra coisa para entender a sua relação causal. Por exemplo, entendendo a contaminação a nivel molecar apenas, ou entendendo como o virus se dissemina em uma comunidade ou como atua em uma população. Para os autroes, a melhor esperança para conter uma pandemia não é a realização desses estudos isoladamente, sem conexão entre eles, mas sim de estrategias coerentes que possa unir todos esses niveis de interesse em um único estudo para entender o comportamento da doença na população. 
+
+-->
+
+---
+# Eco-epidemiología
+
+## Universalismo vs. Ecologismo
+
+- Universalismo: Leyes que se aplican al 'todo'.
+
+.center[
+<img src="fig/Slide55.PNG" style="width:23%;">
+]
+
+- Ecologismo: Leyes que se aplican a partes del 'todo'.
+
+.center[
+<img src="fig/Slide56.PNG" style="width:23%;">
+
+([Susser & Susser 1996](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf))
+]
+
+
+<!---
+INTUITO DE EXPLICAR DE ONDE VEM O ECO DE 'ECOEPIDEMIOLOGIA'
+
+Como todas as ciências, a epidemiologia busca conceitos gerais que explicam as causas das coisas. Na história da ciência, entretanto, podemos encontrar mais de um conceito geral. Portanto, o universalismo das ciências físicas deve ser complementado pelo ecologismo das ciências biológicas. Em contraste com o universalismo, o ecologismo busca localizar e compreender os limites que limitam as generalizações dos sistemas biológicos, humanos e sociais.
+
+Segundo os autores, a busca por leis universais do mundo material lida com um paradoxo. Quanto menores os elementes microscómicos interagentes que essas leis explicam, mais provavelmente esses elementos são universais - indiferente a tempo e espaço. 
+
+Algumas leis podem ser aplicadas em nosso planeta para as espécies e os processos evolutivos que as produzem; mas acima do nível das moleculas, nenhuma entidade biológica consegue ser explica 100% por uma única "regra". O fato banal aqui é que cada sociedade é influenciada por suas circunstâncias econômicas, políticas e culturas, bem como por sua mistura de povos, clima e topografia. Por isso que, quanto mais universal é uma regra, menos biológica ela se torna e, acima de tudo, menos humana. 
+
+Assim, o universalismo não é universalmente aplicável a epidemiologia. Quando entramos nos reinos físico, biológico e social do mundo humano, precisamos de um conjunto paralelo de ideias entrelaçadas com a busca pela generalidade. 
+
+Para Susser e Susser, a má adaptação do universalismo à realidade humana na epidemiologia é melhor substituída por uma construção contrastante de ecologismo. Os construtos ecológicos tentam lidar com a verdadeira complexidade do mundo biológico. Essas construções devem ser localizadas em vários graus; eles devem ser limitados se pretendem abranger todos os níveis menos que universais do mundo biológico e suas interações particulares.
+-->
+
+---
+# Eco-epidemiología
+
+## Cajas chinas: un paradigma de la ecoepidemiología
+
+<br>
+
+.center[
+<img src="https://images-na.ssl-images-amazon.com/images/I/91TWKY5WXhL._AC_SL1500_.jpg" style="width:34%;">
+
+([Susser & Susser 1996](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf))
+]
+
+<!---
+Assim, Susser e Susser propõe um paradigma para a eco-epidemiologia: o paradigma das caixas chinesas. 
+
+Segundo os autores, a epidemiologia seria composta por uma gama de sistemas interconectos, semelhante as caixas chinesas. Cada caixa seria um sistema único, mas que estaria dentro de um sistema maior e assim por diante. Esses sistemas não estariam fechados dentro de si, tendo uma conexão com os demais sistemas. 
+-->
+
+---
+# Eco-epidemiología
+
+## Cajas chinas: un paradigma de la ecoepidemiología
+
+- Un sistema es un conjunto o conjuntos de factores conectados entre sí y que, de alguna manera, presentan una relación coherente. Por tanto, un sistema es una abstracción que permite describir un conjunto de factores relacionados en términos de una estructura o función coherente (e.j. El cuerpo humano es un sistema; La sociedad es un sistema).
+
+- Cada sistema se puede describir en sus propios términos. 
+
+<br>
+
+.center[
+<img src="fig/Slide58.PNG" style="width:70%;">
+]
+
+.center[([Susser & Susser 1996](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf))]
+
+<!---
+(...)
+
+Cada um define os limites de um determinado nível de organização e a estrutura dentro desses limites; tudo depende (COMO TUDO NA BIO!).
+
+Assim, pode-se identificar um conjunto de fatores que compõem um sistema. Sua coerência implica um certo grau de persistência e estabilidade. Essa estabilidade coexiste, porém, com a capacidade de mudança. Como os fatores contidos em um sistema se relacionam de alguma forma, a mudança e a atividade em um setor interferem e afetam outros setores.
+
+A ideia do paradigma das caixas chinesas é a de unificar a epidemiologia molecular, clínica e social em uma aplicação multinível de métodos voltados para a identificação de causas, categorização de riscos e controle de problemas de saúde pública.
+
+-->
+---
+# Eco-epidemiología
+
+## Cajas chinas: un paradigma de la ecoepidemiología
+
+
+.center[
+<img src="fig/Slide52.PNG" style="width:80%;">
+
+([Susser & Susser 1996](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf))
+]
+
+<!---
+Uma form de pensar o paradigma: 
+
+A caixa externa pode ser o ambiente físico abrangente que, por sua vez, contém sociedades e populações (o terreno epidemiológico), indivíduos individuais e sistemas fisiológicos individuais, tecidos e células e, finalmente (na biologia) moléculas.
+
+
+-- 
+
+Uma observação importante! 
+
+A metáfora das caixas chinesas talvez não seja adequada em todas as dimensões (caixas), visto que os níveis existem em uma hierarquia não apenas de escala, mas também de complexidade, com múltiplas interações entre e dentro dos níveis.
+
+-->
+
+---
+# Eco-epidemiología
+
+- Así, la **ecoepidemiología** se ha definido como un paradigma que propone que el enfoque epidemiológico apropiado es analizar los determinantes y los resultados de salud en los diferentes niveles de organización social, enfatizando el análisis contextual dentro y entre niveles.
+
+.center[
+<img src="https://images-na.ssl-images-amazon.com/images/I/91TWKY5WXhL._AC_SL1500_.jpg" style="width:28%;">]
+
+- [Susser & Susser (1996)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380475/pdf/amjph00516-0068.pdf) definen el término dentro de un enfoque conceptual que unifica la epidemiología molecular, clínica y social en una aplicación de varios niveles de métodos destinados a identificar causas, categorizar riesgos y controlar problemas de salud pública.
+
+<!--
+Ecoepidemiologia é multidisciplinar!
+-->
+
+---
+# Eco-epidemiología
+
+## Definición actual
+
+- Los métodos epidemiológicos y sus enfoques de investigación han sido desafiados por la escala sin precedentes de cambios en los ecosistemas que sustentan la vida, siendo los principales impactos los resultados de:
+  - Cambios climáticos
+  - Cambios sociales
+  - Pérdida de biodiversidad
+  - Introducción de especies exóticas
+
+- Como resultado de estos cambios, los epidemiólogos han visto que la epidemiología de los factores de riesgo se ha vuelto inadecuada para tratar de manera efectiva los procesos y eventos que resultan en enfermedades, no porque la variación en el riesgo individual no sea importante, sino porque las principales fuerzas que dan forma la distribución del riesgo individual se constituye en sistemas dinámicos para los cuales las formas reduccionistas de análisis no son adecuadas.
+
+<!---
+- A principios de la década de 1980, este término se aplicó al estudio de las influencias ecológicas en la salud humana, ya sea relacionadas con contaminantes ambientales o interacciones biológicas como los ciclos de vida de los parásitos.
+
+(...)
+-->
+
+.center[([Soskolne et al. 2007](https://www.colinsoskolne.com/documents/change.pdf))]
+
+---
+# Eco-epidemiología
+
+## Definición actual
+<br>
+
+.center[
+<img src="https://conteudo.imguol.com.br/c/entretenimento/23/2021/02/03/bbb-21-lumena-aponta-dedo-para-juliette-e-diz-que-sister-esta-mentindo-1612324623101_v2_900x506.jpg" style="width:60%;">]
+
+
+---
+# Eco-epidemiología
+
+## Definición actual
+
+- Actualmente, el término "**ecoepidemiología**" se ha utilizado para *describir la investigación epidemiológica que cubre las relaciones entre la integridad del ecosistema y la salud humana*. 
+
+.center[
+<img src="fig/Slide49.PNG" style="width:55%;">
+]
+
+.center[([Soskolne et al. 2007](https://www.colinsoskolne.com/documents/change.pdf))]
+
+<!---
+- Apenas "recentemente" os epidemiologistas começaram a lidar com as implicações dos declínios ecológicos na saúde da população como resultado da atividade humana.
+
+- Reconhecendo esses desafios, o termo "** ecoepidemiologia **" foi usado para * descrever a pesquisa epidemiológica que cobre as relações entre a integridade do ecossistema e a saúde humana *.
+
+- Assim, a Ecoepidemiologia é uma subespecialidade da epidemiologia, com foco nas relações entre a saúde humana e a dinâmica da mudança ecológica global.
+
+- Há uma consciência crescente de que uma abordagem mais baseada em * sistemas * é essencial para compreender a saúde (global) da população.
+
+- Há um reconhecimento crescente de que muitos tópicos devem ser estudados de forma holística, em vez de estudar diferentes partes do todo separadamente.
+
+-->
+
+---
+name: vigilancia
+
+# Vigilancia epidemiológica
+
+## Definición
+
+```{r echo=FALSE, fig.height=6, fig.width=6}
+DiagrammeR::grViz("
+digraph boxes_and_circles {
+
+  # a 'graph' statement
+  graph [overlap = true, fontsize = 1]
+
+  # several 'node' statements
+  node [shape = box,
+        fontname = Helvetica,
+        color = grey]
+  'Vigilancia epidemiológica'; 'Conjunto de ACCIONES que proporcionan'; 'CONOCIMIENTO'; 'DETECCIÓN'; 'o PREVENCIÓN'; 'cualquier cambio'; 'en los factores determinantes y condicionantes'; 'de la salud INDIVIDUAL o COLECTIVA'; 'con la finalidad de RECOMENDAR y ADOPTAR las medidas de PREVENCIÓN y CONTROL de enfermedades o agravios'
+
+  # several 'edge' statements
+  'Vigilancia epidemiológica'->'Conjunto de ACCIONES que proporcionan'  'Conjunto de ACCIONES que proporcionan'->'CONOCIMIENTO' 'Conjunto de ACCIONES que proporcionan'->'DETECCIÓN' 'Conjunto de ACCIONES que proporcionan'->'o PREVENCIÓN' 'CONOCIMIENTO'->'cualquier cambio' 'DETECCIÓN'->'cualquier cambio' 'o PREVENCIÓN'->'cualquier cambio' 'cualquier cambio'->'en los factores determinantes y condicionantes'->'de la salud INDIVIDUAL o COLECTIVA'->'con la finalidad de RECOMENDAR y ADOPTAR las medidas de PREVENCIÓN y CONTROL de enfermedades o agravios'
+}
+")
+```
+
+.center[([Ley Brasileña Nº 8.080/90](http://www.planalto.gov.br/ccivil_03/leis/l8080.htm))]
+
+<!---
+A vigilância epidemiológico é o conjunto de ações que proporcionam o conhecimento, a detecção ou a pevenção de qualquer mudança nos fatores determnantes e condicionais da saúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças ou agravos. 
+-->
+
+---
+# Vigilancia epidemiológica
+
+## Función
+
+```{r echo=FALSE, fig.height=6, fig.width=6}
+DiagrammeR::grViz("
+digraph boxes_and_circles {
+
+  # a 'graph' statement
+  graph [overlap = true, fontsize = 1]
+
+  # several 'node' statements
+  node [shape = box,
+        fontname = Helvetica,
+        color = grey]
+  
+  # several 'edge' statements
+  'Recolección de datos'->'Procesamiento de datos'->'Análisis e interpretación continuas de datos'->'Aplicación de la información a la promoción de la salud y la prevención y el control de enfermedades'->'Divulgación de la información'
+
+}
+")
+```
+
+.center[([Porta 2014](https://www.amazon.com.br/Dictionary-Epidemiology-Miquel-Porta/dp/0199976732))]
+
+<!--
+A menudo, la Vigilancia se diferencia del monitoreo por la noción de que la vigilancia es continua, mientras que el seguimiento tiende a ser más intermitente o episódico.
+-->
+
+---
+name: anim
+
+# Animales venenosos
+
+- Animales que producen una sustancia tóxica (compuesta por una o más toxinas) que causa daño fisiológico dependiente de la dosis que se transfiere pasiva o activamente de un organismo al ambiente interno de otro organismo a través de un mecanismo de liberación y daño mecánico ([Nelsen et al. 2013](https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12062)).
+
+- Las estructuras o sistemas de entrega son casi tan diversos como los organismos que los tienen, desde el intrincado diseño de los colmillos de víbora hipodérmica hasta las espinas huecas empleadas por ciertas orugas ([Nelsen et al. 2013](https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12062)).
+
+<br>
+.center[
+<img src="https://pbs.twimg.com/media/EcqjQUlXgAI9ut6.jpg" style="width:35%;">
+]
+
+<!--
+homem picado por cobra aja em Brasilia 
+-->
+
+---
+# Animales venenosos
+
+## Grupos principales 
+
+<br> 
+
+
+```{r echo=FALSE,  results="asis"}
+library(kableExtra)
+library(formattable)
+library(emojifont)
+library(dplyr)
+
+Animales = c("Serpientes", "Arañas", "Escorpiones", "Orugas punzantes", "Lacraias", "Himenópteros", "Algunos peces")
+
+Ejemplo = c("Coral, Jararaca", "Araña marrón", "Escorpión amarillo", "Lonomia", "Lacraia", "Abejas, avispas y hormigas", "Pez globo o Raia")
+
+Aparato = c("Colmillos", "Chelicera", "Aguilhão", "Cerdas", "Forcípulas", "Aguijón", "Espinas")
+
+t1 = data.frame(Animales, Ejemplo, Aparato) 
+
+t1 %>% mutate(Animales = cell_spec(Animales, escape = FALSE)) %>% kable(escape = FALSE) %>% kable_paper(full_width = T) 
+```
+
+.center[🐍 🕷🦂 🐛 🐝 🐡]
+
+
+---
+background-image: url(fig/brasil.PNG)
+background-size: 100px
+background-position: 90% 1%
+
+# Animales venenosos
+
+## Importancia para la salud publica
+
+<br>
+.pull-left[
+```{r echo=FALSE, fig.height=4}
+library(readr)
+library(tidyverse)
+
+acc = read_delim("acc.csv", ";", escape_double = FALSE, locale = locale(encoding = "WINDOWS-1252"), trim_ws = TRUE)
+
+names(acc) = c("tipo", "ano", "acc")
+
+library(viridis)
+library(hrbrthemes)
+
+acc %>% ggplot(aes(x = tipo, y = acc/10, fill = tipo)) +
+  geom_bar(position="stack", stat="identity") +
+  scale_fill_viridis(discrete = T) + labs(fill = "Animal venenoso") + 
+  ggtitle("Acidentes com animais venenosos entre 2010 - 2021") +
+  theme(axis.text.x = element_text(angle = 90), legend.position = 'none') + 
+  xlab("Ano") + ylab("Média de notificações") 
+
+```
+]
+
+.pull-right[
+```{r echo=FALSE, fig.height=4}
+acc %>% ggplot(aes(x = ano, y = acc)) +
+  geom_bar(stat="identity", fill = '#FF9966') +
+  xlab("Ano") + ylab("Número de acidentes") +
+  theme_bw() + 
+  ggtitle("Acidentes com animais venenosos entre 2010 - 2021") +
+  theme(axis.text.x = element_text(angle = 90), legend.position = 'none') + 
+  scale_x_continuous(acc$ano, labels = as.character(acc$ano), breaks = acc$ano, name = "Ano")
+```
+]
+
+.center[
+([TABNET - SINAN - DATASUS: 11/05/2021](http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sinannet/cnv/animaisbr.def))
+]
+
+<!--
+Para a maioria dos animais venenosos no mundo, estatísticas detalhas sobre número de humanos picados, envenenados ou mortos não está disponivel. O que temos publicados está de estimativas com validade variáveil. É claro, no entando, que sabemos que certos taxóns causam morbidade e mortalidade significativos em humanos. 
+
+Dos trabalhos que vi, a maioria trás os acidentes com serpentes como os mais frequentes, com estimativas que chegam a ~2 milhões e meio de acidentes por ano. 
+
+Na sequência estariam os acidentes com escorpiões (~1.2 milhão), seguido pelas aranhas e demais taxons.
+
+No Brasil, no entando, temos dados que divergem desses trabalhos, com uma média de acidentes com escorpiões significativamente maior no país.
+
+Segundo dados do Tabnet do SINAN, nos ultimos 10 anos o número de notificaçoes de acidentes 
+com escorpiões por ano foi de ~100 mil/ano, seguido por ~30 mil/ano acidentes com aranhas e então serpentes. Pensando que a média de acidentes por ano é de ~200 mil, os acideentes com escorpiões correspondem quase a metade desses acidentes.
+
+Além do exposto, vemos que existe um crescimento no número de acidentes a cada ano que passa. Mesmo no ano de pandêmia - que foi 2020 - tivemos um número altissímo de acidentes. 
+
+Autores tem ligado esse crescimento no numero de acc a diversos fatores, entre eles as já citadas mudanças climaticas, sociais, do uso da terra e a perda de biodiversidade. 
+
+-->
+
+---
+name: animma
+
+# Animales venenosos y medio ambiente
+
+## Ecología epidemiológica
+
+- El estudio desde el punto de vista ecológico de los animales venenosos suele formar parte de la investigación ecoepidemiológica.
+
+
+```{r echo=FALSE, fig.height=6, fig.width=6}
+DiagrammeR::grViz("
+digraph boxes_and_circles {
+
+  # a 'graph' statement
+  graph [overlap = true, fontsize = 1]
+
+  # several 'node' statements
+  node [shape = box,
+        fontname = Helvetica,
+        color = blue]
+  'Clima'; 'Serpiente'; 'Colmillos'; 'Plantas'
+
+  # several 'edge' statements
+  edge [color = grey]
+  'Clima'->'Serpiente' 'Clima'->'Colmillos' 'Clima'->'Plantas'
+  'Colmillos'->'Serpiente' 'Plantas'->'Colmillos'
+}
+
+")
+```
+
+<!---
+O estudo de acidentes com animais venenosos em populações requer um entendimento da relação entre esses organismos e o seu ambiente. Esse relacionamento governa as ocorrências de acidentes no espaço e no tempo. O clima, por exemplo, afeta a sobrevivência e a distribuição dos animais venenosos diretamente ou, mais sutilmente, pela regulação da ocorrência de alimento e predadores. 
+
+Para entender melhor essa relação, vamos falar sobre alguns conceitos ecológicos importantes...
+-->
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico e o diagrama BAM
+
+.center[
+<img src="fig/Slide1.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+<!---
+
+-->
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico e o diagrama BAM
+
+.center[
+<img src="fig/Slide2.PNG" style="width:70%;">
+]
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide3.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide4.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide5.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide6.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide7.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide8.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide9.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide10.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide11.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide12.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide13.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide14.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide15.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide16.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide17.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide18.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide19.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide20.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Nicho ecológico
+
+.center[
+<img src="fig/Slide21.PNG" style="width:70%;">
+]
+
+.center[[(Towsend et al. 2010)](https://www.amazon.com.br/Fundamentos-em-Ecologia-Colin-Townsend/dp/8536320648)]
+
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide22.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide23.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide24.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide25.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide26.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide27.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide28.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide29.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide30.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide31.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide32.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Diagrama BAM
+
+.center[
+<img src="fig/Slide33.PNG" style="width:70%;">
+]
+
+.center[[(Guisan et al. 2017)](https://www.amazon.com.br/Habitat-Suitability-Distribution-Models-Applications/dp/052175836X)]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+--
+
+.center[
+<img src="fig/Slide34.PNG" style="width:70%;">
+]
+
+<!---
+A "ecologia" como disciplina têm sido ampliada para englobar não somente a parte natural (ex. o fisiológico e o biológico) mas também o social, o cultural e os contextos historicos em que as populacções existem, incluindo os fatores locais e globais, como a urbanização e a globalização. Animais venenosos muitas vezes capitalizam em distúrbios ecológicos e sociais.
+-->
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide35.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide36.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide37.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide38.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide39.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide40.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide41.PNG" style="width:70%;">
+]
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide42.PNG" style="width:70%;">
+]
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra
+
+.center[
+<img src="fig/Slide43.PNG" style="width:70%;">
+]
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra + clima
+
+.center[
+<img src="fig/Slide44.PNG" style="width:70%;">
+]
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra + clima
+
+.center[
+<img src="fig/Slide45.PNG" style="width:70%;">
+]
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra + clima
+
+.center[
+<img src="fig/Slide46.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra + clima
+
+.center[
+<img src="fig/Slide47.PNG" style="width:70%;">
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra + clima
+<br>
+.center[
+<img src="fig/Slide48.PNG" style="width:90%;">
+
+<br>
+
+**enfermedad ocupacional**
+]
+
+---
+# Animales venenosos y medio ambiente
+
+## Impacto del uso y ocupación de la tierra + clima
+
+.center[
+<img src="https://ourworldindata.org/uploads/2021/03/Distribution-of-earths-mammals.PNG" style="width:45%;">
+]
+
+---
+name: espacial
+
+# (Eco-)epidemiología espacial
+
+## Primera ley de la geografía
+
+- "todas las cosas están relacionadas con todo lo demás, pero las cosas cercanas están más relacionadas que las distantes" [Waldo Tobler](https://www.jstor.org/stable/143141?refreqid=excelsior%3Ac529766f408f528030ea904a74d546e7&seq=1). 
+
+
+.center[
+<img src="fig/Slide60.PNG" style="width:65%;">
+]
+
+<!---
+Os acidentes com animais venenosos estão intimamente ligada aos conceitos de próximidade no espaço e no tempo, pois o acidente é mais provável de ocorrer se os indivíduos em risco estão mais próximos em um espaço e tempo.
+
+As análises epidemiológicas, portanto, devem levar em conta o espaço e o tempo, tendo como princípio básico examinar a dependência entre as observações em relação a essas duas dimensões. 
+
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+- Tenemos la percepción de que la salud está relacionada con el medio de la persona - tiempo y espacio.
+
+- El comportamiento de las personas en este contexto ambiental y social contribuye a su estado de salud *al largo del tiempo*. 
+
+- El comportamiento del medio, natural o modificado, puede influir en la salud al *largo del tiempo*. 
+
+- **Salud**: "Un estado de completo bienestar físico, mental y social y no simplemente la ausencia de enfermedad o dolencia" ([WHO 1946](https://www.who.int/about/who-we-are/constitution#:~:text=Health%20is%20a%20state%20of,belief%2C%20economic%20or%20social%20condition.)). 
+
+- Como resultado, el entorno de las personas es el punto de partida de los **Sistemas de Información Geográfica (SIG)** en lo que respecta a la salud pública.
+
+- La incorporación de la perspectiva espacial en los estudios de salud permite comprender los procesos salud-enfermedad y puede conducir a resultados diferentes a los obtenidos en estudios que no la consideraron.
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+## John Snow - historia
+
+.center[
+<img src="fig/Slide62.PNG" style="width:50%;">
+]
+Mapa de Londres del brote de cólera de 1854 de John Snow (las muertes se muestran como puntos, las bombas de agua como cruces). 
+
+<!---
+John Snow (York, 15 de março de 1813 – Londres, 16 de junho de 1858) foi um médico inglês, considerado pai da epidemiologia moderna. Ele demonstrou que o cólera era causado pelo consumo de águas contaminadas com matérias fecais, ao comprovar que os casos dessa doença se agrupavam nas zonas onde a água consumida estava contaminada com fezes, na cidade de Londres no ano de 1854. 
+
+Nesse ano cartografou num plano do distrito do Soho os poços de água, localizando como culpado o poço existente em Broad Street, em pleno coração da epidemia. Snow recomendou à comunidade fecha-lo, com o que foram diminuindo os casos da doença. Este episódio é considerado como um dos exemplos mais precoces no uso do método geográfico para a descrição de casos de uma epidemia.
+
+O estudo de Snow ficou para a história como um dos primeiros exemplos que ilustram o poder de análise espacial dos Sistemas de Informação Geográfica.
+
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+  
+.pull-left[
+<br>
+<img src="http://andersonmedeiros.files.wordpress.com/2010/06/etapas_de_um_sig.png" style="width:90%;">
+]
+
+.pull-right[
+
+<br>
+
+Los SIG son el resultado de la combinación de tres tipos diferentes de tecnologías:
+
+- Teledetección
+
+- GPS
+
+- Geoprocesamiento
+]
+
+<!---
+Um sistema de informação geográfica (SIG), também conhecido como SIG ou GIS (acrónimo/acrônimo inglês de geographic information system), é um sistema de hardware, software, informação espacial, procedimentos computacionais e recursos humanos que permite e facilita a análise, gestão ou representação do espaço e dos fenômenos que nele ocorrem.
+
+Pode ser pensado como um sistema constituído por um conjunto de programas computacionais, o qual integra dados, equipamentos e pessoas com objetivo de coletar, armazenar, recuperar, manipular, visualizar e analisar dados espacialmente referenciados a um sistema de coordenadas conhecido. Tal leva a que gestores de projeto ou administradores de organizações possam geodecidir.
+
+Além disso, os SIGs vêm crescendo em todo o mundo, visto que sua interface possibilita um melhor gerenciamento de informações. O que, consequentemente, melhora os processos de tomada de decisão em áreas de grande complexidade, como planejamento municipal, estadual e federal, redes de utilidade pública, proteção ambiental etc.
+
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Teledetección
+
+.center[
+<img src="fig/Slide63.PNG" style="width:70%;">
+]
+
+<!---
+“O Sensoriamento Remoto é a arte e a ciência de adquirir informações sobre a superfície terrestre sem ter nenhum contato físico com ela. Isso é feito detectando e registrando a energia refletida e emitida."
+
+No processo de Sensoriamento Remoto envolve uma interação entre a radiação que entra e o interesse do alvo. Isso é feito usando o sistema de imagem e não-imagem; no entanto, as etapas a seguir estão envolvidas no processo:
+
+O primeiro e mais importante requisito para um sistema de Sensoriamento Remoto é uma fonte de energia ou iluminação ideal que forneça radiação eletromagnética ao alvo de interesse.
+
+A energia vai sair e viajar de sua fonte até a superfície da terra, passando pela atmosfera até o nosso alvo de interesse. Assim que a energia passa pela atmosfera, ela interage com o objeto alvo e, dependendo das propriedades físicas e químicas do alvo, a energia é refletida ou emitida de volta para o sensor coletar e registrar a radiação eletromagnética.
+
+Após a energia eletromagnética refletida ser detectada pelo sensor, ela deve ser transmitida na forma de sinais eletrônicos para as estações terrestres para processamento e geração da saída como imagem. O processamento envolve várias etapas que não cabem ser discutidas aqui. 
+
+A imagem processada é interpretada visual e digitalmente usando várias técnicas de interpretação para extrair as informações de interesse. 
+
+Por fim obtemos um produto de nosso interesse, pode ser um mapa de vegetação, de uso da terra, variáveis climáticas e afins. São esses produtores que utilizamos como fatores explicativos para a ocorrência de animais venenosos, o que também podemos interpretar como fatores de risco. 
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Teledetección
+
+.center[
+<img src="fig/Slide64.PNG" style="width:70%;">
+]
+
+<!---
+es el geoprocesamiento el que generará información para la toma de decisiones
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### ¿Y cómo son estos productos?
+
+.center[
+<img src="fig/Slide65.PNG" style="width:47%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Raster
+
+.pull-left[
+<img src="fig/Slide66.PNG" style="width:120%;">
+.center[¡Una gran matriz de datos!]
+]
+
+.pull-right[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+matrix(rnorm(7*7),nrow=7) %>% 
+  data.frame() %>% 
+  kable(escape = FALSE, digits = 2, row.names = c(1:7)) %>% 
+  kable_paper(full_width = F) 
+```
+]
+
+<!---
+Os rasters são matrizes de dados representadas em cores RGB, formando assim uma superficie contínua que representa a variação de uma variável em uma área determinada. Eles podem ser entendidos como uma tradução númerica de uma imagem satelite, em que cada 'cor' da imagem pode ser substituida por um número.
+
+Matemática é uma linguagem. 
+
+Os dados raster são compostos por linhas (horizontais) e colunas (verticais) de pixels (também conhecidas como células). Cada pixel representa uma região geográfica, e o valor do pixel representa uma característica dessa região.
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Raster
+
+- Tamaño de píxel
+
+.center[
+<img src="https://www.constructioncanada.net/wp-content/uploads/2014/05/pixel_count_face_illustration_300dpi.jpg" style="width:70%;">
+]
+
+---
+background-image: url(https://freepikpsd.com/wp-content/uploads/2019/10/vector-flecha-PNG-4-Transparent-Images.PNG)
+background-size: 65px
+background-position: 55% 65%
+
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Raster
+
+- Tamaño de píxel
+
+.pull-left[
+.center[
+
+<img src="fig/fg.gif" style="width:100%;">
+sf
+]]
+
+.pull-right[
+.center[
+<img src="https://www.esri.com/news/arcuser/0702/graphics/over_arcsde2.gif" style="width:37%;">
+]
+]
+
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Raster
+
+.pull-left[
+- Algunas variables que normalmente encontramos como raster:
+  - Temperatura 
+  - Pluviosidad
+  - Radiación solar 
+  - Índices verdes (por ejemplo, NDVI)
+  - Clasificación de uso de la tierra
+  - Elevación
+  - (...)
+]
+  
+.pull-right[
+.center[
+<img src="https://intarch.ac.uk/journal/issue38/8/images/figure13lg.jpg" style="width:100%;">
+]]
+  
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Vector
+
+.pull-left[
+<img src="https://desktop.arcgis.com/en/arcmap/latest/manage-data/geodatabases/GUID-49497935-EDB0-4BCA-8861-8BE08F89AAA9-web.gif" style="width:80%;">
+
+]
+
+.pull-right[
+```{r echo=FALSE, fig.height=6, fig.width=5}
+pontos = dismo::gbif('Micrurus', # gênero da espécie
+                     species = "Micrurus altirostris", # nome completo da espécie
+                     sp = TRUE, # Retornar como um SpatialPointsDataFrame?
+                     removeZeros = TRUE, # Remover linhas com dados de latitude e/ou logitude faltantes
+                     download = TRUE) # Para realizar o dowload dos registros
+
+
+# - Colocar o nome "data" na guia de valores (que são as datas de amostragem).
+names(pontos) = "data"
+
+library(leaflet)
+library(tidyverse)
+
+leaflet(pontos) %>% addTiles() %>% addMarkers() %>% addScaleBar()
+
+```
+]
+
+<!---
+O vector é outro tipo de estrutura de dados usada para armazenardados espaciais. 
+
+Vector é uma estrutura de dados, usada para armazenar dados espaciais. Os dados vetoriais são compostos de linhas ou arcos, definidos pelos pontos inicial e final, que se encontram nos nós. As localizações desses nós e a estrutura topológica são geralmente armazenadas explicitamente. Os recursos são definidos apenas por seus limites e as linhas curvas são representadas como uma série de arcos de conexão. O armazenamento de vetores envolve o armazenamento de topologia explícita, o que aumenta os overheads, no entanto, ele armazena apenas os pontos que definem um recurso e todo o espaço fora desses recursos é 'inexistente'.
+
+Um GIS baseado em vetor é definido pela representação vetorial de seus dados geográficos. De acordo com as características desse modelo de dados, os objetos geográficos são representados explicitamente e, dentro das características espaciais, os aspectos temáticos são associados.
+
+Os dados vetoriais fornecem uma maneira de representar recursos do mundo real dentro do ambiente GIS. Um recurso é tudo o que você pode ver na paisagem. Imagine que você está no topo de uma colina. Olhando para baixo, você pode ver casas, estradas, árvores, rios e assim por diante (veja figure_landscape). Cada uma dessas coisas seria um recurso quando os representássemos em um aplicativo GIS. Os recursos vetoriais têm atributos, que consistem em texto ou informações numéricas que os descrevem.
+
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Vector
+
+.pull-left[
+Algunas variables que normalmente encontramos como vector:
+- Límites de distrito, ciudades, provincias, estados, países
+- Hidrografía (ríos y límites de cuencas)
+- Uso y ocupación del suelo
+- Puntos de ocurrencia de accidentes
+- Carreteras
+- Líneas eléctricas
+- Relieve (topografía, pendiente, curvas de nivel)
+- (...)
+]
+
+.pull-right[
+<img src="https://miro.medium.com/max/1092/1*nR6KLK_vvIdSdvgsQS2Xdw.png" style="width:80%;">
+
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Importancia de la escala
+
+.center[
+<img src="fig/Slide90.PNG" style="width:65%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+.pull-left[
+### GPS
+
+- Sistema de posicionamiento global
+
+- Indica tu ubicación en el planeta
+
+.center[<img src="fig/cood_2.jpg" style="width:65%;">]
+]
+
+.pull-right[
+### Sistema de referencia de coordenadas
+- **Sistema de coordenadas**: cuadrícula X e Y, en la que se superponen los datos y cómo se ubica un punto en el espacio
+- **Unidades horizontales y verticales**: unidades utilizadas para definir la cuadrícula a lo largo de los ejes X, Y (y Z)
+- **Datum**: versión modelada de la forma de la Tierra que define el origen utilizado para colocar el sistema de coordenadas en el espacio
+- **Información de proyección**: ecuación matemática utilizada para aplanar objetos que están en una superficie redonda para verlos en una superficie plana
+
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Sistemas de Información Geográfica (SIG)
+
+### Base de datos
+
+.pull-left[
+- [WorldClim](https://www.worldclim.org/data/index.html) (clima)
+- [TerraClimate](http://www.climatologylab.org/terraclimate.html) (clima)
+- [CHELSA climate](http://chelsa-climate.org) (clima)
+- [DRYAD](https://datadryad.org/stash/dataset/doi:10.5061/dryad.s2v81) (clima)
+- [EarthEnv](http://www.earthenv.org/) (paisaje)
+- [MapBiomas](https://mapbiomas.org/) (paisaje)
+- [Global Wetlands](https://www2.cifor.org/global-wetlands/) (paisaje)
+- [Global Forest Watch](https://www.globalforestwatch.org/map/?mapPrompts=eyJvcGVuIjp0cnVlLCJzdGVwc0tleSI6InN1YnNjcmliZVRvQXJlYSJ9) (paisaje)
+- [SoilGrids](https://www.soilgrids.org/#!/?layer=TAXNWRB_250m) (tierra)
+- [Google Earth Engine](https://earthengine.google.com/) (diverso)
+- (...)
+]
+
+.pull-right[
+<br>
+<img src="https://www.motadata.com/blog/wp-content/uploads/2021/02/Blog-Header-Oracle-Database-Monitoring.jpg" style="width:80%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Usos:
+
+- Puede proporcionar orientación sobre la resolución de áreas de riesgo de accidentes, ya sea a nivel mundial, internacional o local;
+
+- Ayudar en intervenciones en poblaciones en riesgo;
+
+- Ayudar a asignar o corregir el destino de los recursos (por ejemplo, suero, recursos económicos, profesionales de la salud, formación, etc.);
+
+- Ayuda a comprender los posibles eventos de encuentro entre humanos y animales venenosos;
+
+- Cómo solucionar problemas que provocan la dispersión de animales venenosos y la proximidad a los humanos.
+
+- etc.
+
+---
+# (Eco-)epidemiología espacial
+
+## Marco para el análisis espacial
+
+.center[
+<img src="fig/gis_org.PNG" style="width:65%;">
+]
+
+<!---
+Dado o que foi dito, os SIG facilitam a exploração e análise de grandes bases de dados de eventos de saúde, possibilitando intercruzar dados de sistemas de vigilância em saúde a outras informações importântes para estimar o risco de acidentes com animais venenosos, como dados ambientais e sociodemogrpaficos. 
+
+Aqui temos um pequeno esquema de como funciona o processamento desses dados para a obtenção de informações. Feramente vamos ter os nossos dados relativos aos acidentes - dados de atributo - e outros dados que são as nossas variáveis explicativas. Ambos formaram a nosa base de dados. 
+
+A partir daí começamos com a parte analítica da epidemio espacial: realizar a 'visualização' dos dados com a descrição de padrões; podemos realizar uma exploração dos dados com a finalidade de análises padrões e por fim podemos utilizar esses dados para a criação de modelos matemáticos que serão utilizados com a finalidade de explicar ou predizer padrões.
+
+Na sequência vamos falar um pouco mais de cada uma dessas etapas. 
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos de accidentes con animales venenosos
+
+.pull-left[
+### Datos epidemiológicos
+
+- Registro de accidentes
+- Presencia de especies venenosas
+
+### Importancia de la escala
+
+- Punto de ocurrencia georreferenciado
+- Barrio | Distrito | Comunidad
+- Ciudad
+- Provicia | Estado | País
+]
+
+.pull-left[
+<img src="fig/bruto.jpg" style="width:95%;">
+]
+
+<!---
+Os objetivos da análise epidemiológica espacial são a descrição de padrões espaciais, a identificação de grupos de doenças e a explicação ou previsão do risco de doenças. Fundamental para estes objetivos é a necessidade de dados que, além das clássicas informações de atributos de dados que descrevem as características da entidade estudada, requeiram a disponibilidade de dados de feições georreferenciados, sejam eles pontos ou áreas. 
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+
+.pull-left[
+<img src="fig/Slide68.PNG" style="width:90%;">
+]
+
+.pull-right[
+```{r echo=FALSE, fig.height=6, fig.width=5}
+library(leaflet)
+library(tidyverse)
+library(raster)
+library(maptools)
+
+data("wrld_simpl")
+
+ext = c(-85, -34.81973, -40, 10)
+
+
+r = raster::getData("worldclim", 
+                    var = "bio", 
+                    res = 10)
+
+map = raster::crop(wrld_simpl, ext)
+
+rr = raster::crop(raster::mask(r[[1]], map), map)
+
+
+pal = colorNumeric(c("#003300", "#006633", "#009300", "#FFFFCC",
+                     "#FF9900", "#FF6600", "#FF3300"), values(rr),
+                   na.color = "transparent")
+
+
+
+leaflet() %>% addTiles() %>% addRasterImage(rr, col = pal, opacity = 0.5, group = "Bio 1") %>% 
+  addScaleBar()
+
+```
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+
+.center[
+<img src="fig/Slide69.PNG" style="width:65%;">
+]
+
+---
+background-image: url(https://freepikpsd.com/wp-content/uploads/2019/10/vector-flecha-PNG-4-Transparent-Images.PNG)
+background-size: 50px
+background-position: 43% 50%
+
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+
+.pull-left[
+<img src="fig/Slide70.PNG" style="width:75%;">
+]
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+Localidad = c(1:9)
+Occ = c(1, 0, 0, 0, 1, 0, 0, 1, 1)
+
+V1 = c(8.6, 9.4, 13.6, 7.0, 10.6, 14.1, 8.3, 7.8, 9.7)
+V2 = c(2.0, 3.1, 3.4, 0.9, 1.7, 5.3, 4.5, 5.0, 3.9)
+V3 = c(6.6, 6.3, 10.2, 6.1, 8.8, 8.8, 3.8, 2.7, 5.8)
+
+t2 = data.frame(Localidad, Occ, V1, V2, V3) 
+
+names(t2) = c("Localidad", "Occ. de accidente", "Variable 1", "Variable 2", "Variable 3")
+
+t2 %>% kbl(caption = "Tabla de datos") %>% kable_classic(full_width = F, html_font = "Cambria")
+```
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+
+<div class="background" style="width: 1100px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 30px;">
+
+.pull-left[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+Localidad = c(1:9)
+Occ = c(1, 0, 0, 0, 1, 0, 0, 1, 1)
+
+V1 = c(8.6, 9.4, 13.6, 7.0, 10.6, 14.1, 8.3, 7.8, 9.7)
+V2 = c(2.0, 3.1, 3.4, 0.9, 1.7, 5.3, 4.5, 5.0, 3.9)
+V3 = c(6.6, 6.3, 10.2, 6.1, 8.8, 8.8, 3.8, 2.7, 5.8)
+
+t2 = data.frame(Localidad, Occ, V1, V2, V3) 
+
+names(t2) = c("Localidad", "Occ. de accidente", "Variable 1", "Variable 2", "Variable 3")
+
+t2 %>% kbl(caption = "Tabla de datos") %>% kable_classic(full_width = F, html_font = "Cambria")
+```
+]
+
+.pull-right[
+- Localidad = Coordenadas
+- Localidad = Local (barrio, ciudad, provincia, etc)
+
+.center[<img src="fig/punto.jpg" style="width:75%;">]
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+
+.center[
+<img src="https://simulatingcomplexity.files.wordpress.com/2014/11/netcdf-file-structure.png" style="width:50%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+<br>
+.center[
+<img src="https://www.researchgate.net/publication/315950787/figure/fig3/AS:567797237248005@1512384818972/An-example-of-how-a-dataset-netCDF-or-xarray-for-a-weather-forecast-might-be.png" style="width:90%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Base de datos
+
+### Cómo organizar la hoja de datos
+
+<div class="background" style="width: 1000px; height: 370px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 30px;">
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+Localidad = c(rep(1:9, 3))
+Tiempo = c(rep(c("T1", "T2", "T3"), 9))
+Occ = c(1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1)
+V1 = c(8.6, 9.4, 13.6, 7.0, 10.6, 14.1, 8.3, 7.8, 9.7, 1.12, 14.73,  0.63,  8.94, 14.1, 9, 15.64, 15.98, 13.40, 15.51, 14.84, 8.32, 17.25, 8.09, 5.25, 7.03, 7.09, 19.16)
+V2 = c(2.0, 3.1, 3.4, 0.9, 1.7, 5.3, 4.5, 5.0, 3.9, 4.08, 3.27, 0.03, 3.19, 0.54, 4.90, 3.99, 2.06, 0.82, 1.80, 1.06, 4.10, 0.00, 0.14, 2.20, 3.36, 4.65, 3.72)
+V3 = c(6.6, 6.3, 10.2, 6.1, 8.8, 8.8, 3.8, 2.7, 5.8, 4.72, 8.88,  9.22,  4.39, 11.09,  9.59, 10.17,  6.44,  7.43,  8.20, 11.94,  4.15,  8.80,  7.57, 10.89,  9.62,  7.92, 11.56)
+
+t3 = data.frame(Localidad, Tiempo, Occ, V1, V2, V3) 
+
+names(t3) = c("Localidad", "Tiempo", "Occ. de accidente", "Variable 1", "Variable 2", "Variable 3")
+
+t3 %>% kbl(caption = "Tabla de datos") %>% kable_classic(full_width = F, html_font = "Cambria")
+```
+
+---
+# (Eco-)epidemiología espacial
+
+## Tipos de estudios ecoepidemiológicos con animales venenosos
+
+.center[
+<img src="fig/Slide83.PNG" style="width:80%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+.center[
+<img src="fig/Slide84.PNG" style="width:80%;">
+]
+<!---
+Os objetivos analíticos específicos conduzem a três grupos de métodos analíticos: visualização, exploração e modelagem. Os primeiros dois grupos cobrem técnicas que se concentram exclusivamente no exame da dimensão espacial dos dados. A visualização é provavelmente o método de análise espacial mais comumente usado, resultando em mapas que descrevem padrões espaciais e que são úteis para estimular
+análises mais complexas e para comunicar os resultados dessas análises. A exploração de dados espaciais envolve o uso de métodos estatísticos para determinar se os padrões observados são aleatórios no espaço
+A modelagem introduz o conceito de relações de causa e efeito usando fontes de dados espaciais e não espaciais para explicar ou prever padrões espaciais. É preciso enfatizar que nenhuma dessas abordagens permite inferência causal definitiva. Há alguma sobreposição entre os grupos, principalmente entre visualização e exploração, uma vez que uma apresentação visual significativa pode exigir o uso de métodos analíticos quantitativos. Os quatro grupos ilustrados na Fig. 1.2 podem ser usados para definir um processo lógico e sequencial para conduzir análises espaciais. Deve-se notar, entretanto, que este não é um processo linear, pois apresentar os resultados da exploração e modelagem requer um retorno à visualização
+--->
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Estadística
+
+.pull-left[
+<br>
+<br>
+<img src="fig/Slide89.PNG" style="width:100%;">
+]
+
+.pull-right[
+- **VR:**
+  - Número de accidentes o animales venenosos 
+  - Prevalencia, incidencia 
+  - Numero de muertes 
+  - Presencia/ausencia de accidentes o animales venenosos
+
+- **VE**:
+  - Variables demograficas 
+  - Variables sociales 
+  - Variables climáticas 
+  - Variables de paisaje
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Estadística
+
+- Le permite organizar, describir, analizar e interpretar datos
+- La teoría de la probabilidad se utiliza para modelar aleatoriedad e incertidumbre asociadas con fenómenos naturales, económico, social,. . .
+- Ayuda a sacar conclusiones sobre las características de las fuentes de las que se extrajeron los datos, para comprenderlas mejor. Indispensable para la toma de decisiones en condiciones de incertidumbre, con el menor riesgo posible.
+
+.center[<img src="https://cdn.lynda.com/course/5026557/5026557-637491086371117815-16x9.jpg" style="width:30%;">]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### ¿Por qué estudiar estadística?
+
+.pull-left[
+- <p style="font-size:18px; color:blue; font-weight:bold; font-style:italic;">La matemática es un lenguaje!</p>
+- Imposibilidad de estudiar toda la población de accidentes con animales venenosos
+- Mayor capacidad para registrar datos que deben ser
+entendido
+- Ampliación del conocimiento científico, áreas de investigación y
+de instrumentos de investigación.
+- Necesidad de comprender los fenómenos naturales y sociales, optimización de recursos, planificación de actividades, reducción de riesgos, de pronosticar resultados para una correcta toma de decisiones
+decisión.
+]
+
+.pull-right[
+<img src="fig/Slide86.PNG" style="width:110%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Clasificación de la estadística
+
+.center[
+<img src="fig/Slide85.PNG" style="width:70%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Clasificación de variables
+
+.center[
+<img src="fig/Slide87.PNG" style="width:70%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Exploración de datos
+
+.center[
+<img src="fig/Slide88.PNG" style="width:70%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Visualización de datos
+
+#### Gráficos
+
+- Los gráficos son representaciones visuales que se utilizan para mostrar datos, ya sea sobre información específica o valores numéricos.
+
+- Generalmente, se utilizan para demostrar patrones, tendencias y también para comparar información cualitativa y cuantitativa durante un período de tiempo determinado.
+
+- Son herramientas utilizadas en varias áreas de estudio (matemáticas, estadística, geografía, economía, historia, etc.) para facilitar la visualización de algunos datos, así como para hacer los datos más claros e informativos.
+
+- Así, el uso de gráficos hace que la interpretación y / o el análisis sean más rápidos y objetivos.
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Visualización de datos
+
+#### Gráficos para variables numéricas ([Data to Viz](https://www.data-to-viz.com/))
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/graphs.PNG" style="width:100%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Visualización de datos
+
+#### Gráficos para variables categóricas ([Data to Viz](https://www.data-to-viz.com/))
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/categorical.PNG" style="width:100%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Visualización de datos
+
+#### Gráficos para variables numéricas & categóricas ([Data to Viz](https://www.data-to-viz.com/))
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/num_cat.PNG" style="width:100%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Visualización de datos
+
+#### Gráficos de series temporales([Data to Viz](https://www.data-to-viz.com/))
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/temp.PNG" style="width:80%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+.center[
+**<p style="font-size:50px;">Visualización de datos</p>**
+
+<img src="https://www.iconpacks.net/icons/1/free-bar-chart-icon-676-thumb.png" style="width:20%;">
+
+**<p style="font-size:60px;">Algunos ejemplos útiles</p>**
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Grafico de línea
+(Dos variables cuantitativas y una cualitativa; Datos ordenados)
+
+.center[
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.height= '350px', out.width = '1000px'}
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(plotly)
+library(ggthemes)
+library(tidyverse)
+library(tidyverse)
+
+Localidad = c(rep(c("A", "B", "C", "D"), 25))
+Tiempo = as.Date(as.character(rep(1990:2014, each = 4)),format="%Y")
+Occ = sample(0:100, 100, replace=F)
+Var = runif(100, 0, 40) %>% round(2)
+
+t4 = data.frame(Localidad, Tiempo, Occ, Var)
+
+
+# Plot
+aa = t4 %>%
+  ggplot(aes(x=Tiempo, y=Occ, group = Localidad, colour = Localidad)) +
+  geom_line(size = 0.8) + 
+  theme(legend.title = element_blank()) +
+  ylab("Numero de accidentes")
+
+ggplotly(aa) %>% add_annotations(text="Local", xref="paper", yref="paper",
+                                 x=1.02, xanchor="left",
+                                 y=0.8, yanchor="bottom",  
+                                 legendtitle=TRUE, showarrow=FALSE ) %>%
+  layout(legend=list(y=0.8, yanchor="top"))
+
+                                              
+```
+]
+
+<!--
+Um gráfico de linha mostra a evolução de uma ou de variás variáveis. 
+
+Podemos pensar nesses gráficos como pontos conectados por segmentos de linha reta. 
+
+Esses pontos de medição são ordenados (normalmente pelo eixo x) e unidos com segmentos de uma linha reta. 
+
+Um gráfico de linha é freqüentemente usado para visualizar uma tendência nos dados ao longo de intervalos de tempo - uma série de tempo - portanto, a linha é freqüentemente desenhada cronologicamente.
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de barras 
+(Dos variables cuantitativas y una cualitativa; Datos ordenados)
+
+```{r echo=FALSE, fig.height=5, fig.width=3}
+library(ggthemes)
+
+cc1 = t4 %>% ggplot(aes(x=Tiempo, y=Occ)) +
+  geom_bar(position="stack", stat="identity") + facet_wrap(~Localidad) +
+    theme(text = element_text(size=12)) + ylab("Numero de accidentes")
+
+ggplotly(cc1)
+
+```
+
+<!--
+Um gráfico de barras (ou gráfico de barras) é um dos tipos mais comuns de gráfico. Mostra a relação entre uma variável numérica e uma categórica. Cada entidade da variável categórica é representada como uma barra. O tamanho da barra representa seu valor numérico.
+
+
+(...)
+
+Em vez de colocar as barras uma ao lado da outra, é possível empilhá-las, resultando em um gráfico de barras empilhado:
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de barras apiladas
+(Dos variables cuantitativas y una cualitativa; Datos ordenados)
+
+```{r echo=FALSE, fig.height=5, fig.width=3.5}
+library(ggthemes)
+
+cc = t4 %>% ggplot(aes(x=Tiempo, y=Occ, fill=Localidad)) +
+  geom_bar(position="stack", stat="identity") +
+    theme(text = element_text(size=12)) + ylab("Numero de accidentes")
+
+ggplotly(cc)
+
+```
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de caja
+(Una variable cuantitativa y una cualitativa)
+
+```{r echo=FALSE, fig.height=5, fig.width=4}
+library(ggthemes)
+library(plotly)
+
+bb = t4 %>% ggplot(aes(x = Localidad, y = Occ)) +
+  geom_boxplot(size = 0.2) +
+  theme(text = element_text(size=12)) + ylab("Numero de accidentes")
+
+ggplotly(bb)
+```
+
+
+<!--
+Um boxplot fornece um bom resumo de uma ou mais variáveis ​​numéricas. Um boxplot é composto por vários elementos:
+
+A linha que divide a caixa em 2 partes representa a mediana dos dados. Se a mediana for 41, significa que há o mesmo número de pontos de dados abaixo e acima de 41 - ou seja, divide os dados em 50% e 50%. 
+
+As extremidades da caixa mostram os quartis superior (Q3) e inferior (Q1). Se o terceiro quartil for ~76, significa que 75% das observações são inferiores a ~76.
+
+A diferença entre os quartis 1 e 3 é chamada de intervalo interquartil (IQR)
+
+A linha extrema mostra Q3 + 1,5xIQR a Q1-1,5xIQR (o valor mais alto e o mais baixo excluindo outliers).
+
+Pontos (ou outros marcadores) além da linha extrema mostram valores discrepantes em potencial.
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### ¡Gráfico de barras con gráfico de líneas!
+
+```{r echo=FALSE, fig.height=6, message=FALSE, warning=FALSE}
+library(ggthemes)
+library(plotly)
+
+df <- data.frame(Fecha = as.Date(c("2016-01-01", "2016-02-01", "2016-03-01", "2016-04-01", "2016-05-01", "2016-06-01"), 
+                                     format = "%Y-%m-%d"),
+                 Accidents = c(50, 80, 75, 100, 80, 5),
+                 Variable = c(10, 30, 25, 30, 25, 10))
+
+plot_ly(df) %>%
+  add_trace(x = ~Fecha, y = ~Accidents, type = "bar",  name = "Accidents") %>%  
+  add_trace(x = ~Fecha, y = ~Variable, mode = "lines", yaxis = "y2", name = "Variable") %>%
+  layout(yaxis2 = list(overlaying = "y", side = "right"))
+```
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de dispersión
+
+(Relación entre 2 variables numéricas)
+
+<div class="background" style="width: 1150px; height: 425px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/cor4.PNG" style="width:45%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de dispersión
+
+(Relación entre 2 variables numéricas)
+
+.center[
+<img src="fig/Slide72.PNG" style="width:60%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Gráfico de dispersión
+
+(Relación entre 2 variables numéricas)
+
+.center[
+<img src="fig/Slide73.PNG" style="width:60%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de dispersión
+
+(Relación entre 2 variables numéricas)
+
+.center[
+<img src="fig/Slide74.PNG" style="width:60%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de dispersión
+
+(Relación entre 2 variables numéricas)
+
+.center[
+<img src="fig/Slide75.PNG" style="width:60%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+### Gráfico de dispersión
+
+(Relación entre 2 variables numéricas)
+
+.center[
+<img src="fig/Slide76.PNG" style="width:60%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+#### Gráfico de burbujas
+(Tres variables cuantitativas)
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+```{r echo=FALSE, fig.height=5, fig.width=4}
+# Libraries
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(viridis)
+library(hrbrthemes)
+
+# The dataset is provided in the gapminder library
+library(gapminder)
+data <- gapminder %>% filter(year=="2007") %>% dplyr::select(-year)
+
+# Interactive version
+p <- data %>%
+  mutate(gdpPercap=round(gdpPercap,0)) %>%
+  mutate(pop=round(pop/1000000,2)) %>%
+  mutate(lifeExp=round(lifeExp,1)) %>%
+  
+  # Reorder countries to having big bubbles on top
+  arrange(desc(pop)) %>%
+  mutate(country = factor(country, country)) %>%
+  
+  # prepare text for tooltip
+  mutate(text = paste("Country: ", country, "\nPopulation (M): ", pop, "\nLife Expectancy: ", lifeExp, "\nGdp per capita: ", gdpPercap, sep="")) %>%
+  
+  # Classic ggplot
+  ggplot( aes(x=gdpPercap, y=lifeExp, size = pop, color = continent, text=text)) +
+    geom_point(alpha=0.7) +
+    scale_size(range = c(1.4, 19), name="Population (M)") +
+    scale_color_viridis(discrete=TRUE, guide=FALSE) +
+    theme_ipsum() +
+    theme(legend.position="none")
+
+# turn ggplot interactive with plotly
+pp <- ggplotly(p, tooltip="text")
+pp
+
+# save the widget
+# library(htmlwidgets)
+# saveWidget(pp, file=paste0( getwd(), "/HtmlWidget/ggplotlyBubblechart.html"))
+```
+
+.center[
+<img src="fig/blegend.PNG" style="width:50%;">
+]
+
+<!--
+Um gráfico de bolha é um gráfico de dispersão que mostra a relação entre três variáveis:
+
+A primeira que se encontra em um dado eixo X
+Uma segunda no eixo Y
+E uma terceira que será representada pelo tamanho das bolas
+
+Você precisa de 3 variáveis ​​numéricas como entrada: uma é representada pelo eixo X, uma pelo eixo Y e uma pelo tamanho do ponto.
+
+Neste gráfico, a relação entre o PIB per capita e a expectativa de vida é bastante óbvia: os países ricos tendem a viver mais tempo, com um efeito de limiar quando o PIB per capita atinge ~ 10.000. Essa relação poderia ter sido detectada usando um gráfico de dispersão clássico , mas o tamanho da bolha permite matizar esse resultado com um terceiro nível de informação: a população do país.
+
+Esta última variável é muito mais difícil de interpretar do que aquela nos eixos X e Y. Na verdade, a área dificilmente é interpretada pelo olho humano . Mas a informação está aqui, e se existisse uma relação clara entre a população e o PIB per capita ou expectativa de vida, nós a localizaríamos.
+
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+## Visualización de datos
+
+## Mapas ([Data to Viz](https://www.data-to-viz.com/))
+
+<div class="background" style="width: 1100px; height: 425px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/map_graph.PNG" style="width:70%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+.center[
+**<p style="font-size:50px;">Visualización de datos</p>**
+
+<img src="https://images.vexels.com/media/users/3/155717/isolated/preview/8934c36ada5d23627c77bc8f2478eadd-camping-map-icon-by-vexels.png" style="width:20%;">
+
+**<p style="font-size:60px;">Algunos ejemplos útiles - Mapas</p>**
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Mapa de burbujas
+(Vectores; lista de coordenadas y una o dos variables numéricas; lista de regiones y una o dos variables numéricas)
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.pull-left[<img src="fig/bubble2.PNG" style="width:90%;">]
+
+.pull-right[<img src="fig/bubble.PNG" style="width:90%;">]
+
+<!--
+A bubble map usa círculos de tamanhos diferentes para representar um valor numérico em um território. Ele exibe uma bolha por coordenada geográfica ou uma bolha por região (neste caso, a bolha geralmente é exibida no baricentro da região).
+
+Os mapas de bolhas são usados com dois tipos de conjunto de dados:
+
+uma lista de coordenadas geográficas (longitude e latitude) e uma variável numérica controlando o tamanho da bolha. No exemplo anterior, o número de tweet em cada par exclusivo de coordenadas foi usado.
+
+Uma lista de regiões com valores atribuídos e limites conhecidos. Observe que permite evitar o enviesamento causado por diferentes áreas regionais nos mapas coropléticos. (grandes regiões tendem a ter mais peso durante a observação).
+
+-->
+---
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Mapa de coropletas
+
+(Vectores; lista de regiones y una variable numérica)
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+.center[
+<img src="fig/cloro.PNG" style="width:70%;">
+]
+
+<!---
+Um "choropleth map" exibe áreas geográficas divididas ou regiões coloridas em relação a uma variável numérica. Permite estudar como uma variável evolui ao longo de um território. É uma técnica de visualização de dados poderosa e amplamente usada. Porém, sua desvantagem é que regiões com tamanhos maiores tendem a ter um peso maior na interpretação do mapa, o que pode incluir um viés.
+-->
+
+---
+background-image: url(https://freepikpsd.com/wp-content/uploads/2019/10/vector-flecha-PNG-4-Transparent-Images.PNG)
+background-size: 50px
+background-position: 46% 50%
+
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Cartogramas
+(Vectores; lista de regiones y una variable numérica)
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.pull-left[<img src="fig/carto.PNG" style="width:90%;">]
+
+
+.pull-right[<img src="fig/cartog_gif.gif" style="width:90%;">]
+
+<!---
+Um cartograma é um mapa no qual a geometria das regiões é distorcida para transmitir a informação de uma variável alternativa. A área da região será inflada ou desinflada de acordo com seu valor numérico.
+
+Na maioria das vezes, um cartograma também é um mapa coroplético onde as regiões são coloridas de acordo com uma variável numérica (não necessariamente aquela usada para construir o cartograma).
+
+O cartograma visa corrigir o viés que pode ser observado em um mapa coroplético: quando uma variável é agregada por região, uma região com pouquíssimos pontos de dados parecerá tão importante quanto uma região com muitos pontos de dados.
+
+Por exemplo, imagine que você exibe o salário médio por região em seu mapa coroplético. Uma região com 3 habitantes com uma área enorme terá mais importância em seu mapa do que uma pequena com 3.000 habitantes, o que induz um viés forte. O cartograma visa reduzir esse viés.
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Mapa continuo (Raster)
+(Raster; una variable numérica)
+
+<div class="background" style="width: 1150px; height: 400px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+<img src="fig/raster.PNG" style="width:90%;">
+
+---
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Combinación de mapas
+
+<div class="background" style="width: 1150px; height: 450px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+<img src="fig/comb2.PNG" style="width:92%;">
+
+---
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Combinación de mapas
+
+<div class="background" style="width: 1150px; height: 450px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+<img src="fig/comb.PNG" style="width:92%;">
+
+---
+# (Eco-)epidemiología espacial
+
+## Mapas
+
+### Recuerdo: Tiempo!!
+
+<div class="background" style="width: 1150px; height: 450px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[
+<img src="fig/Slide82.PNG" style="width:90%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Modelado
+
+.center[
+<img src="fig/Slide48.PNG" style="width:90%;">
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Modelado
+
+.center[
+**<p style="font-size:35px;">¡La matemática es un idioma!</p>**
+
+<img src="fig/mat_idioma.jpg" style="width:50%;">
+]
+<!---
+A modelagem matemática é a área do conhecimento que estuda a simulação de sistemas reais a fim de prever o comportamento destes, sendo empregada em diversos campos de estudo, tais como física, química, biologia, economia e engenharias. Ou seja, a modelagem matemática consiste na atividade (ou tentativa) de descrever matematicamente um fenômeno.
+-->
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Modelo estadístico
+
+.pull-left[
+<img src="fig/elephant.PNG" style="width:80%;">
+]
+
+.pull-left[
+<br>
+- Simplificaciones de la realidad
+- <p style="color:blue;">Todos los modelos son incorrectos… pero algunos modelos son más útiles que otros!!</p>
+- El modelo correcto no puede ser conocido con exactitud
+- Cuanto más simple sea un modelo (menos parámetros), mejor (Principio de parsimonia)
+
+.center[
+([Burnham & Aderson 2003](http://ecologia.ib.usp.br/bie5782/lib/exe/fetch.php?media=bie5782:pdfs:burnham_anderson2002.pdf)
+*apud* [Adriana Pérez](https://campus.exactas.uba.ar/course/view.php?id=2281&section=2))
+]
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Modelo estadístico
+
+.pull-left[
+<br>
+<img src="fig/mod.PNG" style="width:75%;">
+]
+
+.pull-left[
+- Es una expresión matemática que indica cómo una variable aleatoria (VR, Y), con una distribución de probabilidades dada, se relaciona con una o más variables predictoras o explicativas (VE, X) consideradas en el diseño experimental (**Y ~ X**).
+
+- ¡El tipo de VR determina la posible naturaleza de la distribución de datos (Gaussiano, Poisson, Binomial, etc.)!... 
+
+- Y también el método de modelado que emplearemos (LM, GLM, GLMM, Bayesianos, etc).
+
+- Requiere independencia entre las obs (y eso es un ~problema~).
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Modelo estadístico
+
+- Ejemplo con un modelo lineal (LM):
+
+  - **VR = 4.78 + 0.89 * VE**
+
+.center[
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.height= '300px', out.width = '300px'}
+data(iris)
+
+iris %>% ggplot(aes(x = Petal.Width, y = Sepal.Length)) + 
+  geom_point() +
+  stat_smooth(method = "lm", col = "red") + xlab("VE") + 
+  ylab("VR") 
+```
+]
+
+---
+# (Eco-)epidemiología espacial
+
+## Métodos analíticos
+
+### Protocolo de análisis de datos
+
+0. Recopilación de datos
+1. Descripción de los datos
+2. Identificar la naturaleza de la VR (¿normal? ¿Poisson? ¿Bernoulli?) para asignar la distribución de datos esperada; Identificar los tipos de VE (¿cuantitativos o cualitativos?).
+3. Estima el modelo.
+4. Verifique los supuestos de los modelos.
+5. Realizar la evaluación y selección de modelos (índices como AIC, BIC, LRT, Wald, etc.).
+6. Validar el modelo (observaciones frente a predicciones)
+7. Interpreta el modelo
+8. Grafica los resultados
+  - Los mismos gráficos y mapas que vimos se pueden utilizar para presentar los resultados de los modelos.
+  - Todo depende de tu hipótesis/objetivos
+
+---
+# (Eco-)epidemiología espacial
+
+## Software y lenguajes de programación
+
+.center[
+<img src="fig/Slide91.PNG" style="width:80%;">
+]
+
+---
+name: ejemplo
+
+# Ejemplos de trabajo con animales venenosos
+
+## Ecoepidemiología del lonomismo en Sudamérica 
+
+.center[
+<img src="fig/cuida.PNG" style="width:60%;">
+]
+
+---
+# Ejemplos de trabajo con animales venenosos
+
+[Potential distribution and ecological conditions of *Lonomia obliqua* Walker 1855 (Saturniidae: Hemileucinae) in Brazil](https://doi.org/10.1016/j.actatropica.2019.01.016)
+
+Marília Melo Favalesso, Lisete Maria Lorini, Maria Elisa Peichoto & Ana Tereza Bittencourt Guimarães
+
+.pull-left[
+<img src="fig/backp.jpg" style="width:90%;">
+]
+
+.pull-right[
+<br>
+
+**VR:**
+- Puntos de ocurrencia de *Lonomia obliqua* en América del Sur
+(artículos científicos, base de datos, museos)
+
+**VE:**
+- Variables climáticas
+- Variables de suelo
+- Variables de uso del suelo*
+]
+---
+# Ejemplos de trabajo con animales venenosos
+
+[Potential distribution and ecological conditions of *Lonomia obliqua* Walker 1855 (Saturniidae: Hemileucinae) in Brazil](https://doi.org/10.1016/j.actatropica.2019.01.016)
+
+Marília Melo Favalesso, Lisete Maria Lorini, Maria Elisa Peichoto & Ana Tereza Bittencourt Guimarães
+
+.center[<img src="fig/Slide93.PNG" style="width:88%;">]
+
+---
+background-image: url(https://freepikpsd.com/wp-content/uploads/2019/10/vector-flecha-PNG-4-Transparent-Images.PNG)
+background-size: 50px
+background-position: 48% 50%
+
+# Ejemplos de trabajo con animales venenosos
+
+[Potential distribution and ecological conditions of *Lonomia obliqua* Walker 1855 (Saturniidae: Hemileucinae) in Brazil](https://doi.org/10.1016/j.actatropica.2019.01.016)
+
+Marília Melo Favalesso, Lisete Maria Lorini, Maria Elisa Peichoto & Ana Tereza Bittencourt Guimarães
+
+.pull-left[
+<img src="fig/mod.jpg" style="width:90%;">
+]
+
+.pull-right[
+<img src="fig/distmap.jpg" style="width:79%;">
+]
+
+---
+# Ejemplos de trabajo con animales venenosos
+
+[Potential distribution and ecological conditions of *Lonomia obliqua* Walker 1855 (Saturniidae: Hemileucinae) in Brazil](https://doi.org/10.1016/j.actatropica.2019.01.016)
+
+Marília Melo Favalesso, Lisete Maria Lorini, Maria Elisa Peichoto & Ana Tereza Bittencourt Guimarães
+
+.pull-left[
+<img src="fig/amb.jpg" style="width:90%;">
+]
+
+.pull-right[
+<img src="fig/Slide92.PNG" style="width:90%;">
+]
+
+---
+# Ejemplos de trabajo con animales venenosos
+
+[Revealing land-use change as a key factor influencing the incidence of envenomation by *Lonomia* spp. in southern Brazil](https://www.researchgate.net/publication/329554201_Revealing_land-use_change_as_a_key_factor_influencing_the_incidence_of_envenomation_by_Lonomia_spp_in_southern_Brazil)
+
+Marília Melo Favalesso, Eliana Burgos, Maria Elisa Peichoto & Ana Tereza Bittencourt Guimarães
+
+<div class="background" style="width: 1150px; height: 450px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;">
+
+.center[<img src="fig/poster.PNG" style="width:90%;">]
+
+---
+background-image: url(https://freepikpsd.com/wp-content/uploads/2019/10/vector-flecha-PNG-4-Transparent-Images.PNG)
+background-size: 50px
+background-position: 48% 50%
+
+# Ejemplos de trabajo con animales venenosos
+
+**First eco-epidemiological assessment and risk mapping of lonomism in Argentina: Implications for public health and travel medicine** <br>
+([enviado para publicación en Plos One NTDS](https://journals.plos.org/plosntds/))
+
+Milena Gisela Casafús, Marília Melo Favalesso, Micaela Andrea Gritti, Juan Manuel Coronel, Ana Tereza Bittencourt Guimarães & Maria Elisa Peichoto
+
+.pull-left[<img src="fig/density.PNG" style="width:95%;">]
+
+.pull-right[.center[<img src="fig/fig_3.PNG" style="width:50%;">]]
+
+---
+# Muchas gracias!!
+
+<br>
+
+.center[
+<img src="fig/cobra.jpg" style="width:50%;">
+]
+
+.center[
+
+Diapositivas creadas con el paquete [xaringan](https://github.com/yihui/xaringan) - `r icons::icon_style(icons::fontawesome("r-project"), fill = "#000000")`
+
+]
+
+---

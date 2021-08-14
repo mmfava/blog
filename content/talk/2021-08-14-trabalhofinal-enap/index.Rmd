@@ -1,0 +1,27 @@
+---
+title: Trabalho final curso do ENAP
+subtitle: Curso de didática em "Análise estatística descritiva com uso de R"
+author: Marília Melo Favalesso
+categories:
+- Discente de curso/aula
+date: "2021-08-13"
+draft: false
+event: ENAP
+event_url: 
+featured: true
+layout: single
+location: Virtual
+show_post_time: false
+---
+
+## Detalhes
+
+Nas últimas três semanas, participei de um curso que visava capacitar profissionais e usuários de R para o ensino de estatística introdutória nessa línguagem. Ao final do período, todos os participantes apresentaram uma aula, sendo a minha a seguinte:
+
+
+## Slides
+
+```{r echo=FALSE}
+knitr::include_url('slides.html')
+```
+

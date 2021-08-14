@@ -1,0 +1,477 @@
+---
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+class: clear
+background-image: url(fig/Slide1.PNG)
+background-size: 1100px
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+for (i in c(1:111)){
+  print("class: clear")
+  print(paste0("background-image: url(fig/Slide", i ,".PNG)"))
+  print("background-size: 1100px")
+  print("---")
+}
+```
+
+---
+class: clear
+background-image: url(fig/Slide2.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide3.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide4.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide5.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide6.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide7.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide8.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide9.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide10.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide11.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide12.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide13.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide14.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide15.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide16.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide17.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide18.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide19.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide20.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide21.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide22.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide23.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide24.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide25.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide26.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide27.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide28.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide29.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide30.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide31.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide32.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide33.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide34.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide35.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide36.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide37.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide38.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide39.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide40.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide41.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide42.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide43.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide44.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide45.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide46.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide47.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide48.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide49.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide50.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide51.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide52.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide53.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide54.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide55.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide56.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide57.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide58.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide59.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide60.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide61.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide62.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide63.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide64.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide65.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide66.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide67.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide68.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide69.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide70.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide71.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide72.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide73.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide74.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide75.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide76.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide77.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide78.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide79.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide80.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide81.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide82.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide83.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide84.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide85.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide86.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide87.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide88.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide89.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide90.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide91.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide92.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide93.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide94.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide95.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide96.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide97.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide98.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide99.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide100.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide101.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide102.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide103.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide104.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide105.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide106.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide107.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide108.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide109.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide110.PNG)
+background-size: 1100px
+---
+class: clear
+background-image: url(fig/Slide111.PNG)
+background-size: 1100px
+---
+.center[
+# Gracias!!
+
+<img src="https://www.mmfava.com/marilia.png" style="width:10%;">
+
+## Marília Melo Favalesso
+
+`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#000000")` [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+`r icons::icon_style(icons::fontawesome("globe-americas", style = "solid"), fill = "#000000")` [www.mmfava.com](www.mmfava.com)
+`r icons::icon_style(icons::fontawesome("twitter"), fill = "#000000")` [Twitter: @mmfbee](https://twitter.com/mmfbee)
+`r icons::icon_style(icons::fontawesome("github"), fill = "#000000")` [Github: mmfava](https://github.com/mmfava)
+]

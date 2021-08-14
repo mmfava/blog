@@ -1,0 +1,31 @@
+---
+title: "幻灯忍者"
+subtitle: "写轮眼"
+author: "谢益辉"
+institute: "RStudio, PBC"
+date: "2016/12/12"
+output:
+  xaringan::moon_reader:
+    css: [default, zh-CN.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Muchas gracias!!
+
+.center[
+
+<style> 
+img {
+  border-radius: 50%;
+}
+</style>
+
+<img src="https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg" style="width:50%;">
+
+
+Diapositivas creadas con el paquete [xaringan](https://github.com/yihui/xaringan) - `r icons::icon_style(icons::fontawesome("r-project"), fill = "#000000")`
+]

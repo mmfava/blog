@@ -1,0 +1,9 @@
+blockquote {
+    max-width: 100%;
+    background: #cdd5e7;
+}
+
+
+.measure-wide, form fieldset, .post-body ul:not(.panel-tabs), .post-body ol, .post-body dl, .page-body ul:not(.panel-tabs), .page-body ol, .page-body dl, .post-body blockquote, .page-body blockquote {
+    max-width: 100%;
+}

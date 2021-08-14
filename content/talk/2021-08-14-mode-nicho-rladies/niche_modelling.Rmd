@@ -1,0 +1,762 @@
+---
+title: "Modelagem de distribuição de espécies"
+subtitle: "Uma introdução com exemplo no R"  
+author: 
+  - "Marília Melo Favalesso"
+role: Product Manager, Data Science Communication 
+company: '@RStudio'
+date: 31-10-2020
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css", "assets/sydney-fonts.css", "assets/sydney.css"]
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      scroll: false
+---
+background-image: url(https://www.mmfava.com/marilia.png)
+background-size: 300px
+background-position: 90% 5%
+
+
+```{css, echo=FALSE}
+pre {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+pre[class] {
+  max-height: 600px;
+}
+```
+
+```{css, echo = F}
+h2 { color: brown; }
+```
+
+```{r xaringan-themer, echo=FALSE}
+library(xaringanthemer)
+style_xaringan(title_slide_text_color = "black", header_color = "#000000", link_color = "#339999", inverse_background_color = "#339999", title_slide_background_position = "center")
+```
+
+### Marília Melo Favalesso 
+**Formação**
+- Técnica ambiental (CEEP, 2009)
+- Bióloga (UFPR, 2014) 
+- Mestre em Ciências Ambientais (UNIOESTE, 2018) 
+- Doutoranda em Ecologia (UBA - Argentina, atual)
+
+**Projetos**
+- [**GECD** - Grupo de Estudos em Ciência de Dados](https://github.com/gecdfoz/GECD)
+- [**Soma dos quadrados**](https://linktr.ee/somaquadrados)
+- [**Grupo de Estudos em Modelagem de nicho e distribuição de espécies**](https://linktr.ee/niche_group)
+
+**Contatos**
+
+- ✉️ [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+- 🌎 [www.mmfava.com](www.mmfava.com)
+- 🥚 [Twitter: @mmfbee](https://twitter.com/mmfbee)
+- 💻 [Github: mmfava](https://github.com/mmfava)
+
+---
+class: clear
+background-image: url(figuras/Slide6.PNG)
+background-size: 500px
+
+## O que é um modelo?
+
+---
+class: clear
+background-image: url(figuras/Slide7.PNG)
+background-size: 600px
+
+## O que é um modelo?
+
+---
+class: clear
+background-image: url(figuras/Slide8.PNG)
+background-size: 1000px
+
+## Modelos de distribuição de espécies
+
+---
+class: clear
+background-image: url(figuras/Slide9.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide10.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide11.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide12.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide13.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide14.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide15.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide16.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide17.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide18.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide19.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide20.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide21.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide22.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide23.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide24.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide25.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide26.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide27.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide28.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide29.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide30.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide31.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide32.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide33.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide34.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide35.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide36.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide37.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide38.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide39.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide40.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide41.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide42.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide43.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide44.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide45.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide46.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide47.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide48.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide49.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide50.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide51.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide52.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide53.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide54.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide55.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide56.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide57.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide58.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide59.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide60.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide61.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide62.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide63.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide64.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide65.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide66.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide67.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide68.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/raster.gif)
+background-size: 500px
+
+## Raster
+---
+class: clear
+background-image: url(figuras/Slide70.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide71.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide72.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide73.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide74.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide75.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide76.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide77.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide78.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide79.PNG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(figuras/Slide80.PNG)
+background-size: 1000px
+
+---
+## Modelagem de distribuição de espécies com o R
+### Exemplo com *Trigona spinipses* na América do Sul
+
+### Pacotes:
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+## Instalar o pacote ENTML
+devtools::install_github("andrefaa/ENMTML")  
+
+## Carregar os pacotes
+install.packages(maptools) # pacote para abrir mapas diretamente no R
+install.packages(raster) # para trabalhar com rasters
+install.packages(dismo) # função gbif - download de ocorrências de espécies. 
+install.packages(tidyverse) # trabalhar com as planilhas
+install.packages(ENMTML) # pacote para modelagem de nicho
+install.packages(leaflet) # pacote para mapas interativos - usaremos nos resultados 
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Dados de ocorrência do GBIF
+- Vamos baixar dados de ocorrência de *T. spinipes* do [database GBIF](https://www.gbif.org/). 
+
+```{r message=FALSE, warning=FALSE, include=TRUE}
+# - Vamos usar a função "gbif()" para fazer o download dos dados.
+pontos = dismo::gbif('Trigona', # gênero da espécie
+              species = "Trigona spinipes", # nome completo da espécie
+              sp = TRUE, # Retornar como um SpatialPointsDataFrame?
+              removeZeros = TRUE, # Remover linhas com dados de latitude e/ou logitude faltantes
+              download = TRUE) # Para realizar o dowload dos registros
+
+# - Colocar o nome "data" na guia de valores (que são as datas de amostragem).
+names(pontos) = "data"
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Salvar os dados de ocorrência para utilizar com o pacote ENMTML
+
+- O arquivo precisa ser salvo em .TXT (separado por tabulação)! 
+- Precisamos apenas de três colunas em nossa tabela:
+  - 1o nome da espécie
+  - 2o longitude
+  - 3o latitude
+  
+<div style="width: 1050px; height: 320px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; 
+border: 0; padding: 0px; display: inline-block;">
+```{r message=FALSE, warning=FALSE, include=TRUE}
+library(tidyverse)
+
+# Primeiro vamos gerar um objeto com o endereço do nosso diretório de trabalho:
+d_ex = file.path('C:/Users/mmfav/Dropbox/nichemod')
+d_ex
+
+# Extrair as informações dos pontos para uma tabela:
+tabela = as.data.frame(pontos)
+
+tabela = as.data.frame(pontos) %>% # transformar os dados em data.frame
+  select('lon', 'lat') %>% # selecionar apenas long e lat
+  add_column('species' = c(rep('Trigona spinipes', length(tabela$lon))),  # Incluir uma coluna com nome da sp ...
+             .before = 'lon') # ... antes de coluna "lat".
+
+# Mudar o nome das colunas para facilitar incluir na função depois 
+names(tabela)[2:3] = c("x", "y")
+
+# Salvar os pontos de ocorrência como .txt
+# - criar uma pasta para os pontos no diretório chamada "occ":
+dir.create(paste0(d_ex, '/occ')) 
+# - salvar os pontos de ocorrência em um arquivo chamado "occ.txt"
+utils::write.table(tabela, file.path(d_ex, 'occ/occ.txt'), sep = '\t', row.names = FALSE)
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Dados de ocorrência do GBIF
+
+```{r}
+knitr::kable(x = head(pontos), format = "html")
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Área de projeção do modelo
+
+- Polígono do mapamundi
+```{r message=FALSE, warning=FALSE, include=TRUE}
+library(maptools)
+data("wrld_simpl")
+```
+
+- Recortando o mapa para uma extensão mais próxima dos pontos de ocorrência (background).
+
+1 - Olhar a saída de 'pontos' e ver a dimensão geográfica dele
+```{r}
+pontos
+```
+
+2 - Salvar a extensão em um objeto chamado "ext". 
+```{r}
+ext = c(-85, -34.81973, -40, 0) # colocar um pouquinho mais amplo que os pontos
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Área de projeção do modelo
+
+3 - Recortar o mapa mundi para a extensão selecionada. 
+```{r message=FALSE, warning=FALSE, include=TRUE}
+map = raster::crop(wrld_simpl, ext)
+```
+
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Background
+<div style="width: 1000px; height: 400px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; 
+border: 0; padding: 0px; display: inline-block;">
+```{r}
+plot(map, # nosso limite territorial - America do sul
+     axes = T, # Pedir para incluir os eixos das coordenadas
+     lwd = 1.8, # Grossura da linha do mapa
+     col = "#CCFF99", # colorir os países de verde
+     bg = "#CCFFFF") # cor do background da imagem em azul
+
+
+# Plotar o nome dos países no mapa
+text(map$LON, map$LAT, map$NAME, cex = 0.7, font = 2)
+
+# Os pontos de ocorrência da nossa espécie
+points(pontos, # chamar o poligono de pontos
+       pch = 20, # estilo dos pontos de ocorrência 
+       col = 'red', # na cor vermelha
+       cex = 1.5) # tamanho de 1.5
+
+# Incluir legenda com o nome da espécie
+legend('bottomright', # do lado inferior-direito
+       pch = 20, # mesmo estilo dos pontos que antes
+       legend = c(as.expression(bquote(italic("Trigona spinipes")))), # Nome da sp em itálico
+       col = 'red', # Cor do ponto em preto
+       bg = 'white', # Cor do background em branco
+       bty = 0, # Tipo de caixa ao redor da legenda
+       cex = 1) # Tamanho da legenda
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Dados biogeoclimáticos
+- Chamar os dados para o R com a função `getData()`. 
+- Vamos usar os dados da plataforma [wordclim](https://www.worldclim.org/).
+
+```{r}
+# diretório de trabalho
+setwd('C:/Users/mmfav/Dropbox/nichemod')
+
+# download data
+r = raster::getData("worldclim", # banco de dados
+            var = "bio", # var. biogeoclimáticas
+            res = 10) # resolução = 10m
+```
+
+- Recortar os rasters pela extensão da América do sul
+```{r}
+rr = raster::crop(raster::mask(r, map), map)
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Dados biogeoclimáticos
+
+- Visualizar as variáveis biogeoclimáticas
+```{r fig.width=7}
+plot(rr)
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Dados biogeoclimáticos
+
+- Salvando os dados bioclimáticos em um diretório próprio
+```{r message=FALSE, warning=FALSE, include=TRUE}
+# Criar um diretório chamado 'env':
+dir.create(paste0(d_ex, '/env')) 
+
+# Para salvar cada um dos rasters individualmente no repositório:
+for(i in names(rr)){ # para cada raster em 'rr'...
+  raster::writeRaster(rr[[i]], paste0(file.path(d_ex, 'env'), "/", i, '.tif'), overwrite = T)
+}
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Modelando a distribuição com o pacote ENMTML
+
+- Criar uma pasta/diretório para salvar os resultados do(s) modelo(s)
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+dir.create(paste0(d_ex, '/resultados')) 
+```
+
+- Vamos criar objetos com os endereços dos diretórios. Vamos usar os objetos na função `ENMTML()`.
+```{r}
+# endereço das variáveis climáticas
+d_env = file.path("C:/Users/mmfav/Dropbox/nichemod/env") 
+
+# endereço dos pontos de ocorrência
+d_occ = "C:/Users/mmfav/Dropbox/nichemod/occ/occ.txt" 
+
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Modelando a distribuição com o pacote ENMTML
+
+<div style="width: 1100px; height: 400px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; 
+border: 0; padding: 0px; display: inline-block;">
+```{r}
+ENMTML::ENMTML(
+  pred_dir = d_env, # Endereço para o diretório das variáveis
+  proj_dir = NULL, # Quando trabalhamos com projeções - diferentes locais no espaço ou tempo
+  # result_dir = res, # Pasta para salvar as saídas/resultados 
+  occ_file = d_occ, # Pasta onde estão nossos pontos de ocorrência
+  sp = 'species', # coluna que contêm o nome das espécies 
+  x = 'x', # coluna que corresponde a longitude
+  y = 'y', # coluna que corresponde a latitude
+  min_occ = 10, # Número minimo de ocorrências para cada espécie
+  thin_occ = NULL, # Inserimos os métodos de filtragem de ocorrências dados redundantes 
+  eval_occ = NULL, # Tabela com dados de ocorrência para validação dos dados 
+  colin_var = c(method='PEARSON', threshold='0.7'), # Onde inserimos os métodos para evitar a colinearidade entre os dados 
+  imp_var = FALSE, # Calcula a importância das variáveis em curvas de resposta 
+  sp_accessible_area = NULL, # Método de restrição de área acessível para as espécies 
+  pseudoabs_method = c(method = 'RND'), # Método de seleção de pseudo-ausências aleatório
+  pres_abs_ratio = 1, # Razão presença-ausência (valores entre 0 e 1)
+  part=c(method= 'KFOLD', folds='10'), # Método de partição para validação do modelo.
+  save_part = FALSE, # Save partitioned data?
+  save_final = TRUE, # Salvar o modelo final em .tif (?)
+  algorithm = c('BIO', 'MAH'), # algoritmos de modelagem
+  thr = c(type='MAX_TSS'), # Para binarizar o mapa, qual método utilizar?
+  msdm = NULL, # Métodos de restrição no modelo para próximo das ocorrências conhecidas 
+  ensemble = c(method='PCA'), # Qual método ensemble, ou de combinação, realizar entre os diferentes algoritmos? 
+  extrapolation = FALSE, # Se TRUE, a função calculará a extrapolação com base na análise de paridade orientada para
+                         # a mobilidade (MOP) para as condições atuais
+  cores = 1 # Defina o número de núcleos de CPU para executar procedimentos de modelagem em paralelo (padrão 1).
+)
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Visualização dos resultados
+
+- Vamos plotar os resultados usando o pacote "leaflet" 
+
+<div style="width: 1100px; height: 400px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; 
+border: 0; padding: 0px; display: inline-block;">
+```{r message=FALSE, warning=FALSE, include=TRUE}
+library(tidyverse)
+library(leaflet)
+library(raster)
+# Abrir o resultado em objeto chamado 'res'
+res = paste0(d_ex, '/Result/Ensemble/PCA/Trigona_spinipes.tif') %>% raster()
+
+# Fazer uma palheta de cores variando de verde até vermelho; para a legenda de 'suitability'. 
+pal = colorNumeric(c("#003300", "#006633", "#009300", "#FFFFCC",
+                     "#FF9900", "#FF6600", "#FF3300"), values(res),
+                   na.color = "transparent")
+
+# Plotar em mapa interativo com LEAFLET
+map = leaflet(pontos) %>% # Usaremos a função 'leaflet' para produzir os mapas e já chamaremos os pontos de occ.
+  addTiles() %>% # add um mapa de fundo
+  addRasterImage(res, # adicionar o raster 'res' (com nossos resultados)
+                 col = pal, opacity = 0.5, group = "Suitability") %>% # com cor = pal, transparência de 50% e nome suitability
+  addLegend(pal = pal, values = values(res), title = "Suitability", group = "Suitability") %>% # add legenda para raster
+  
+  addLayersControl(overlayGroups = c("Suitability"), # Incluir opção de ligar e desligar o raster
+                   options = layersControlOptions(collapsed = FALSE)) %>%
+  addCircleMarkers(radius = 1, col = "black") %>% # adicionar os pontos de ocorrência como circulos
+  addScaleBar() # Adicionar uma barra de escala
+
+```
+
+---
+## Modelagem de distribuição de espécies com o R
+
+### Visualização dos resultados
+
+- Vamos plotar os resultados usando o pacote "leaflet".
+```{r}
+map
+```
+
+---
+class: center, middle
+
+# Agradecimentos
+
+### [R-Ladies BH](https://rladiesbh.com.br/) 💙
+### [Grupo de Estudos "Niche Group"](https://linktr.ee/niche_group) 💛
+
+<img src="https://media1.tenor.com/images/ceadcc4af571518e125e7964e43bb714/tenor.gif?itemid=5459333" style="width: 20%;">
+
+---
+class: center, middle
+
+# Acessar essa apresentação em
+## www.mmfava.com
+
+

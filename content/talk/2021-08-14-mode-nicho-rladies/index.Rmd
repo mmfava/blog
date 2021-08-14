@@ -1,0 +1,23 @@
+---
+title: Introdução a modelagem de distribuição de espécies com exemplo no R
+author: Marília Melo Favalesso
+categories:
+- Curso
+date: "2020-10-31"
+draft: false
+event: Dados da Ecologia e Meio Ambiente Aplicados ao R
+featured: true
+layout: single
+location: Virtual
+show_post_time: false
+---
+
+A Modelagem de Distribuição de Espécies (SDM) visa relacionar ocorrências conhecidas de uma determinada espécie com variáveis ambientais preditoras que, combinadas para formar modelos estatísticos teóricos, possibilitam encontrar novas áreas adequadas para a ocorrência dessa espécie no espaço geográfico.  Nesse curso introdutório, falei sobre os princípios básicos da SDM, quais são os dados utilizados na calibração e avaliação de modelos, quais algoritmos são comumente utilizados, as aplicações dessa abordagem na área da ecologia e um exemplo de aplicação no R. Os seguintes tópicos foram abordados: Introdução aos Modelos de Distribuição de Espécies; Aplicações; Nicho Ecológico e Distribuição das Espécies; Construção e avaliação dos SDMs; exemplo no R.
+
+[Aqui você acessa o link do evento.](https://www.sympla.com.br/we-r-ladies---dados-da-ecologia-e-meio-ambiente-aplicados-ao-r__1013350)
+
+## Slides
+
+```{r echo=FALSE}
+knitr::include_url('niche_modelling.html')
+```

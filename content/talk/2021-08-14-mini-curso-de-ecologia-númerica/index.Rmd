@@ -1,0 +1,40 @@
+---
+author: Marília Melo Favalesso
+categories:
+- Análise multivariada
+date: "2016-09-03"
+draft: false
+event: Semana Acadêmica de Ciências Biológicas (UNIOESTE)
+featured: true
+layout: single
+location: Cascavel, Paraná, Brasil
+show_post_time: false
+title: Mini-curso de Ecologia Numérica
+---
+
+
+Em 2016 ministrei, em parceria com minha querida colega Thais Sobjak, um minicurso de Ecologia numérica para os graduandos de Ciência Biológicas da Universidade Estadual do Oeste do Paraná (UNIOESTE). O curso foi bem básico e apresentei os conceitos e práticas de PCA e Cluster em R. A Thais ensinou a parte de índices ecológicos. 
+
+Na sequência, disponibilizo os materiais que utilizei. 
+
+## Dia 1: 
+
+### Análise de componentes principais (PCA)
+
+```{r echo=FALSE}
+knitr::include_url('pca/pca.html')
+```
+
+## Dia 2: 
+
+### Análise de agrupamento (cluster)
+
+```{r echo=FALSE}
+knitr::include_url('cluster/cluster.html')
+```
+
+## Dia 3: 
+
+### Índices de diversidade 
+
+Parte da Thaís

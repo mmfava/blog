@@ -1,0 +1,5 @@
+li::marker{
+  content: "• ";
+  color: #d918b5;
+  font-size: 1.2em;
+}

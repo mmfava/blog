@@ -1,0 +1,67 @@
+---
+# title: "tidyr"
+# description: |
+#   A short description of the post.
+# author:
+#   - name: Beatriz Milz
+#     url: https://beatrizmilz.com
+# date: 2021-02-28
+# draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+Neste exemplo, vamos criar um gráfico que apresente a distribuição do lucro dos filmes, segundo os gêneros a qual o filme pertence.
+O primeiro desafio é em relação à organização da base de dados. A variável `generos` apresenta todos os gêneros à qual um filme pertence, separados por uma barra vertical:
+
+```{r}
+# imdb_lucro %>% 
+#   select(titulo,generos) %>% 
+#   head() %>% 
+#   knitr::kable()
+```
+
+## Separar?
+
+O pacote [`tidyr`](https://tidyr.tidyverse.org/), parte do `tidyverse`, possui funções que nos ajudam a arrumar a base de dados para que fique no formato tidy: cada coluna sendo uma variável e cada linha sendo uma observação. 
+
+A função `separate` nos ajuda a "separar" valores que estão em uma coluna em novas colunas! No código a seguir, queremos separar o conteúdo que está na coluna `generos`, baseado na separação `|` (porém precisamos escrever `\\|` )
+
+
+```{r}
+# imdb %>%
+#   separate(
+#     generos,
+#     into =  paste0("genero_", 1:8),
+#     sep = "\\|",
+#     extra = "merge"
+#   )
+```
+
+```{r}
+
+# generos_imdb <- imdb_lucro %>%
+#   separate(
+#     generos,
+#     into =  paste0("genero_", 1:8),
+#     sep = "\\|",
+#     extra = "merge"
+#   ) %>%
+#   pivot_longer(cols = starts_with("genero_"), values_drop_na = TRUE) 
+# 
+# # media_lucro_generos <-
+#   generos_imdb %>%
+#   group_by(value) %>% 
+#   ggplot() +
+#   geom_boxplot(aes(x = reorder(value, lucro, fun = median), y = lucro), outlier.alpha = 0.2) + 
+#   scale_y_continuous(labels = scales::dollar) +
+#   coord_flip() +
+#     labs(y = "Lucro médio", x = "Gênero") +
+#   theme_bw()
+```
+
+

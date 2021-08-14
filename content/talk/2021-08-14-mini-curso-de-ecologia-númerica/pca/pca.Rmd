@@ -1,0 +1,342 @@
+---
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: clear
+background-image: url(fig/Slide1.PNG)
+background-size: 990px
+
+```{css, echo = F}
+h2 { color: brown; }
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+
+style_mono_light(base_color = "#23395b", text_font_size = '16px', header_h1_font_size	 = '24px', header_h2_font_size = '20px', header_h3_font_size	= '19px')
+
+```
+
+---
+class: clear
+background-image: url(fig/Slide2.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide3.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide4.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide5.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide6.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide7.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide8.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide9.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide10.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide11.PNG)
+background-size: 850px
+
+---
+class: clear
+background-image: url(fig/Slide12.PNG)
+background-size: 850px
+
+---
+# PCA no R
+
+## Instalar os pacotes necessários a execução da PCA
+```{r eval=FALSE, include=TRUE}
+install.packages("vegan")
+install.packages("ggfortify")
+install.packages("psych")
+install.packages("MVN")
+install.packages("tidyverse")
+intall.packages("kableExtra")
+intall.packages("GGally")
+```
+
+
+## Carregando os pacotes
+```{r eval=FALSE, include=TRUE}
+library(vegan)
+library(ggfortify)
+library(psych)
+library(MVN)
+library(tidyverse)
+library(kableExtra)
+library(GGally)
+```
+
+
+```{r eval=TRUE, include=FALSE}
+library(vegan)
+library(ggfortify)
+library(psych)
+library(MVN)
+library(tidyverse)
+library(kableExtra)
+library(GGally)
+```
+
+---
+# PCA no R
+
+## Abrir o banco de dados 
+
+```{r include=FALSE}
+## Abrir a base de dados
+dados = read.csv2("PCA.csv", sep=",", 
+                  dec=".", header=TRUE, 
+                  strip.white=TRUE)
+
+## Dados sem a linha nominal
+dados1 = dados[,-1]
+```
+
+```{r include=TRUE, eval=FALSE}
+## Abrir a base de dados
+dados = read.csv2("PCA.csv", sep=",", 
+                  dec=".", header=TRUE, 
+                  strip.white=TRUE)
+
+## Dados sem a linha nominal
+dados1 = dados[,-1]
+attach(dados)
+dados1
+```
+
+<div style="width: 800px; height: 350px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r echo=FALSE}
+dados1 %>% kbl() %>%
+  kable_classic(full_width = T, html_font = "Cambria")
+```
+
+---
+# PCA no R
+
+## Pressupostos para a aplicação da Análise de componentes principais
+
+### Todas as variáveis são númericas?
+```{r}
+str(dados1)
+```
+
+---
+# PCA no R
+
+## Pressupostos para a aplicação da Análise de componentes principais
+
+### Associação entre variáveis
+
+<div style="width: 800px; height: 480px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r fig.height=9, fig.width=9, message=FALSE, warning=FALSE}
+cor = cor(dados1)
+ggpairs(cbind(dados1))
+```
+
+---
+# PCA no R
+
+## Pressupostos para a aplicação da Análise de componentes principais
+
+### Associação entre variáveis
+
+**Teste de esferécidade de Bartlett**: Teste de esfericidade de bartlett entre a matriz de correlação (cor) e o tamanho da amostra (n). Ele apresenta a significância da associação entre pelo menos algumas das variáveis amostradas (P<0,05).
+
+```{r}
+bartlett.test(dados1)
+```
+
+---
+# PCA no R
+
+## Pressupostos para a aplicação da Análise de componentes principais
+
+### Cosistência dos dados
+
+**Critério de Kayser-Meyer-Olkin (KMO)**: Indica a proporção da variância dos dados que pode ser considerada comum a todas as variáveis. Quanto mais próximo de 1 melhor o resultado.
+- \> 0,9       Excelente
+- (0,8; 0,9]  Meritória
+- (0,7; 0,8]  Intermedia
+- (0,6; 0,7]  Medíocre
+- (0,5; 0,6]  Mísera
+- < 0,5       Inaceitável
+
+<div style="width: 800px; height: 300px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r}
+KMO(cor)
+```
+
+---
+# PCA no R
+
+## Pressupostos para a aplicação da Análise de componentes principais
+
+### Teste de normalidade multivariada 
+(mais informações sobre a função `mvn` [aqui](http://127.0.0.1:8746/help/library/MVN/doc/MVN.pdf))
+
+<div style="width: 800px; height: 450px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r}
+mvn(dados1)
+```
+
+---
+# PCA no R
+
+## Análise descritiva dos dados
+
+<div style="width: 800px; height: 550px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r fig.height=8, fig.width=11}
+par(mfrow=c(2,3))
+boxplot(dados$Temperatura ~ dados$ponto, ylab="Temperatura", xlab = "ponto", cex.lab = 1.5)
+boxplot(dados$pH ~ dados$ponto, ylab="pH", xlab = "ponto", cex.lab = 1.5)
+boxplot(dados$Potêncial.de.oxirredução ~ dados$ponto, ylab = "Potêncial de oxirredução", xlab = "ponto", cex.lab = 1.5)
+boxplot(dados$Turbidez ~ dados$ponto, ylab="Turbidez", xlab = "ponto", cex.lab = 1.5)
+boxplot(dados$Oxigênio.dissolvido ~ dados$ponto, ylab = "Oxigênio dissolvido", xlab = "ponto", cex.lab = 1.5)
+boxplot(dados$Espécie.B ~ dados$ponto, ylab = "Espécie B", xlab = "ponto", cex.lab = 1.5)
+```
+
+---
+# PCA no R
+
+## A Análise de Componentes Principais
+Rodar a análise e salvar no objeto "pca.dados"
+```{r message=FALSE, warning=FALSE}
+pca.dados = princomp(dados[,-1], cor=T)
+```
+
+## Resultados da análise PCA
+
+### Visualiza a proporção da variância total explicativa de cada componente principal.
+- Standard deviation = Autovalor
+- Proportion of Variance = o quanto cada componente explica a variação dos dados
+- Cumulative Proportion = % acumulada de explicabilidade de todos os fatores
+
+<div style="width: 800px; height: 280px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r}
+summary(pca.dados)
+```
+
+---
+# PCA no R
+
+## Resultados da análise PCA
+
+### Cargas fatoriais
+Coeficientes das combinações lineares das variáveis contínuas.
+
+```{r}
+pca.dados$loadings
+```
+
+---
+# PCA no R
+
+## Resultados da análise PCA
+
+### Escores padronizados
+
+<div style="width: 800px; height: 500px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+```{r}
+pca.dados$scores
+```
+
+---
+# PCA no R
+
+## Resultados da análise PCA
+
+### Quantos componentes? 
+
+**Critério de Broken-stick**: Autovalor > 1.
+
+```{r fig.height=5.5, fig.width=11}
+plot(pca.dados, main = "", cex.lab = 1.5)
+```
+
+---
+# PCA no R
+
+## Resultados da análise PCA
+
+### Diagrama de ordenação
+Representação gráfica da PCA
+
+<div style="width: 800px; height: 500px; white-space: nowrap; overflow-x: scroll; overflow-y: scroll; border: 0; padding: 0px; display: inline-block;">
+
+
+```{r fig.height=5.5, fig.width=11, message=FALSE, warning=FALSE}
+# o comando colour coloriu os pontos amostrados
+autoplot(pca.dados, data = dados, colour = 'ponto',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE, loadings.label.size = 6) + 
+  theme(text = element_text(size = 14)) +
+  labs(color = "Ponto de coleta") +
+  xlab("CP 1 (40.64%)") + ylab("CP 2 (18.57%)")
+  
+
+```
+
+---
+class: clear
+background-image: url(fig/Slide13.PNG)
+background-size: 850px
+
+
+---
+.center[
+# OBRIGADA!!
+
+<img src="https://www.mmfava.com/marilia.png" style="width:30%;">
+
+## Marília Melo Favalesso
+
+`r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#000000")` [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+`r icons::icon_style(icons::fontawesome("globe-americas", style = "solid"), fill = "#000000")` [www.mmfava.com](www.mmfava.com)
+`r icons::icon_style(icons::fontawesome("twitter"), fill = "#000000")` [Twitter: @mmfbee](https://twitter.com/mmfbee)
+`r icons::icon_style(icons::fontawesome("github"), fill = "#000000")` [Github: mmfava](https://github.com/mmfava)
+]
+
