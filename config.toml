@@ -1,4 +1,4 @@
-baseURL = "https://mmfava.com/"
+baseURL = "https://mmfava.netlify.app/"
 theme = "hugo-apero"
 languageCode = "pt"
 title = "Marília Melo Favalesso"
