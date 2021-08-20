@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marília Melo Favalesso</title>
+    <link>https://mmfava.netlify.app/</link>
+    <description>Recent content on Marília Melo Favalesso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Fri, 13 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mmfava.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>@niche_group</title>
+      <link>https://mmfava.netlify.app/project/niche-models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/project/niche-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GECD</title>
+      <link>https://mmfava.netlify.app/project/gecd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/project/gecd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qual é sua pergunta?</title>
+      <link>https://mmfava.netlify.app/project/quale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/project/quale/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soma dos Quadrados</title>
+      <link>https://mmfava.netlify.app/project/soma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/project/soma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trabalho final curso do ENAP</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-trabalhofinal-enap/</link>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-trabalhofinal-enap/</guid>
+      <description>DetalhesNas últimas três semanas, participei de um curso que visava capacitar profissionais e usuários de R para o ensino de estatística introdutória nessa línguagem. Ao final do período, todos os participantes apresentaram uma aula, sendo a minha a seguinte:
+Slides</description>
+    </item>
+    
+    <item>
+      <title>Herramientas eco-epidemiológicas para la vigilancia de los accidentes por animales venenosos</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-ferramentas-ecoepidemiologicas/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-ferramentas-ecoepidemiologicas/</guid>
+      <description>Na sequência eu disponibilizo os slides referente a aula de “Herramientas eco-epidemiológicas para la vigilancia de los accidentes por animales venenosos”, ministrada para os discentes do curso de “Biotoxinologia: Ferramentas para a pesquisa biomédica e sua importância em saúde”, do Programa de Pós-Graduação em Biociências, da Universidade Federal da Integração Latino-Americana, em Foz do Iguaçu – PR – Brasil.
+Maiores informações clicando aqui!
+Slides</description>
+    </item>
+    
+    <item>
+      <title>Git e GitHub no RStudio</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-git-github-rstudio/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-git-github-rstudio/</guid>
+      <description>DetalhesO Git é um software de controle de versões que tem como objetivo gerenciar arquivos texto, principalmente códigos de programação. O funcionamento dessa ferramenta é semelhante aos sistemas de nuvens (Google Drive, Dropbox, Mega, etc), em que podemos compartilhar as edições de um script com uma equipe, além de retomar antigas versões de nossos arquivos.
+Resumidamente, o Git examina as mudanças realizadas nos arquivos de um diretório e vai guardando essas informações para compartilhar com outros usuários e/ou possibilitar a reversão de alterações realizadas.</description>
+    </item>
+    
+    <item>
+      <title>Introdução a modelagem de distribuição de espécies com exemplo no R</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-mode-nicho-rladies/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-mode-nicho-rladies/</guid>
+      <description>A Modelagem de Distribuição de Espécies (SDM) visa relacionar ocorrências conhecidas de uma determinada espécie com variáveis ambientais preditoras que, combinadas para formar modelos estatísticos teóricos, possibilitam encontrar novas áreas adequadas para a ocorrência dessa espécie no espaço geográfico. Nesse curso introdutório, falei sobre os princípios básicos da SDM, quais são os dados utilizados na calibração e avaliação de modelos, quais algoritmos são comumente utilizados, as aplicações dessa abordagem na área da ecologia e um exemplo de aplicação no R.</description>
+    </item>
+    
+    <item>
+      <title>I Webinar Ciência no Parque</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-webnar-ci%C3%AAncia-no-parque/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-webnar-ci%C3%AAncia-no-parque/</guid>
+      <description>Você sabia que o Parque Nacional do Iguaçu (PNI), além de ter muitas atividades culturais e ter um dos cenários mais espetaculares do planeta: as incríveis Cataratas do Iguaçu, também tem muita produção de ciência?! Em conjunto com os servidores do PNI, organizamos um evento online com a intenção de difundir alguns dos projetos de pesquisa realizados no parque! Ficou curiosa/o? Deixo na sequência os vídeos de acesso para o Webinar!</description>
+    </item>
+    
+    <item>
+      <title>Participação no podcast &#34;Intervalo de Confiança&#34;</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-participa%C3%A7%C3%A3o-no-podcast-intervalo-de-confian%C3%A7a/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-participa%C3%A7%C3%A3o-no-podcast-intervalo-de-confian%C3%A7a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Como fazer um mapa animado com dados do IBGE</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-aniversario-ibge/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-aniversario-ibge/</guid>
+      <description>Trabalhando ou não com dados, com certeza você já deve ter ouvido falar sobre o nosso Instituto Brasileiro de Geografia e Estatística (IBGE). O IBGE é uma entidade da administração pública federal, vinculada ao Ministério da Economia, responsável por prover todas as informações estatísticas oficiais do nosso país. Através do seu trabalho analítico, o IBGE nos fornece informações espaço-temporais importantes, como dados sociodemográficos, de ocupação e de uso da terra, sobre a indústria, o meio ambiente e a agricultura, além de cartas e mapas com delimitações do território brasileiro.</description>
+    </item>
+    
+    <item>
+      <title>Orugas de importancia médica</title>
+      <link>https://mmfava.netlify.app/talk/06-27-2020-orugas-de-importancia-m%C3%A9dica/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/06-27-2020-orugas-de-importancia-m%C3%A9dica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mini-curso de Ecologia Numérica</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-mini-curso-de-ecologia-n%C3%BAmerica/</link>
+      <pubDate>Sat, 03 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-mini-curso-de-ecologia-n%C3%BAmerica/</guid>
+      <description>Em 2016 ministrei, em parceria com minha querida colega Thais Sobjak, um minicurso de Ecologia numérica para os graduandos de Ciência Biológicas da Universidade Estadual do Oeste do Paraná (UNIOESTE). O curso foi bem básico e apresentei os conceitos e práticas de PCA e Cluster em R. A Thais ensinou a parte de índices ecológicos.
+Na sequência, disponibilizo os materiais que utilizei.
+Dia 1:Análise de componentes principais (PCA)Dia 2:Análise de agrupamento (cluster)Dia 3:Índices de diversidadeParte da Thaís</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://mmfava.netlify.app/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/license/</guid>
+      <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.
+  </description>
+    </item>
+    
+  </channel>
+</rss>

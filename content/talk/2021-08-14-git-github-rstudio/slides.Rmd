@@ -13,10 +13,9 @@ output:
       countIncrementalSlides: false
 
 ---
-background-image: url(figs/me.jpg)
+background-image: url(images/fig/me.jpg)
 background-size: 300px
 background-position: 90% 5%
-
 
 ```{css, echo=FALSE}
 pre {
@@ -47,145 +46,145 @@ pre[class] {
 
 **Contatos**
 <br>
-* [E-mail: mariliabioufpr@gmail.com]()
+- `r icon::fa_envelope(colour = "pink")` [mariliabioufpr@gmail.com]()
 <br>
-* [Twitter: @mmfbee](https://twitter.com/mmfbee)
+- `r icon::fa_twitter(colour = "pink")` [@mmfbio](https://twitter.com/mmfbio)
 <br>
-* [Github: /mmfava](https://github.com/mmfava)
+- `r icon::fa_github(colour = "pink")` [/mmfava](https://github.com/mmfava)
 <br>
-* [Site: www.mmfava.com](www.mmfava.com)
+- `r icon::fa_link(colour = "pink")` [mariliamelofavalesso.com](https://www.mariliamelofavalesso.com/)
 
 ---
 class: clear
-background-image: url(figs/Slide1.JPG)
-background-size: 1000px
-
----
-class: clear
-background-image: url(figs/Slide2.JPG)
+background-image: url(images/fig/Slide1.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide3.JPG)
+background-image: url(images/fig/Slide2.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide4.JPG)
+background-image: url(images/fig/Slide3.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide5.JPG)
+background-image: url(images/fig/Slide4.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide6.JPG)
+background-image: url(images/fig/Slide5.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide7.JPG)
+background-image: url(images/fig/Slide6.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide8.JPG)
+background-image: url(images/fig/Slide7.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide9.JPG)
+background-image: url(images/fig/Slide8.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide10.JPG)
+background-image: url(images/fig/Slide9.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide11.JPG)
+background-image: url(images/fig/Slide10.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide12.JPG)
+background-image: url(images/fig/Slide11.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide13.JPG)
+background-image: url(images/fig/Slide12.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide14.JPG)
-background-size: 1000px
----
-class: clear
-background-image: url(figs/Slide15.JPG)
+background-image: url(images/fig/Slide13.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide16.JPG)
+background-image: url(images/fig/Slide14.JPG)
+background-size: 1000px
+---
+class: clear
+background-image: url(images/fig/Slide15.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide17.JPG)
+background-image: url(images/fig/Slide16.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide18.JPG)
+background-image: url(images/fig/Slide17.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide19.JPG)
+background-image: url(images/fig/Slide18.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide20.JPG)
+background-image: url(images/fig/Slide19.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide21.JPG)
+background-image: url(images/fig/Slide20.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide22.JPG)
-background-size: 1000px
----
-class: clear
-background-image: url(figs/Slide23.JPG)
+background-image: url(images/fig/Slide21.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide24.JPG)
+background-image: url(images/fig/Slide22.JPG)
+background-size: 1000px
+---
+class: clear
+background-image: url(images/fig/Slide23.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide25.JPG)
+background-image: url(images/fig/Slide24.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide26.JPG)
+background-image: url(images/fig/Slide25.JPG)
 background-size: 1000px
 
 ---
 class: clear
-background-image: url(figs/Slide27.JPG)
+background-image: url(images/fig/Slide26.JPG)
+background-size: 1000px
+
+---
+class: clear
+background-image: url(images/fig/Slide27.JPG)
 background-size: 1000px
 
 ---
@@ -213,7 +212,7 @@ install.packages("usethis")
 ---
 ## Configurar o Git no PC
 .center[
-<img src="figs/repo_loc.png" style="width:80%;"/>
+<img src="images/fig/repo_loc.png" style="width:80%;"/>
 ]
 
 ---
@@ -239,7 +238,7 @@ Outra possibilidade é executar essa configuração diretamente no Git em sua m�
 
 ---
 ## Configurando o GitHub
-<img src="figs/repo_remoto.jpg" style="width:80%;"/>
+<img src="images/fig/repo_remoto.jpg" style="width:80%;"/>
 
 ---
 ## Configurando o GitHub
@@ -269,7 +268,7 @@ usethis::browse_github_token()
 ---
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;"> 
 
-<img src="figs/token2.png">
+<img src="images/fig/token2.png">
 
 ---
 ### Token de acesso pessoal (PAT)
@@ -303,7 +302,7 @@ class: center
 ---
 ## Criar um repositório local pelo RStudio
 .center[
-<img src="figs/repo_loc.png" style="width:80%;">
+<img src="images/fig/repo_loc.png" style="width:80%;">
 ]
 ---
 ## Criar um repositório local pelo RStudio
@@ -333,7 +332,7 @@ usethis::create_project(path = "C:/Users/MMF/Desktop/nome_do_repo2")
 ## Criar um repositório local pelo RStudio
 
 .center[
-<img src="figs/pasta_repo.png" style="width:80%;">
+<img src="images/fig/pasta_repo.png" style="width:80%;">
 ]
 ---
 ## Criar um repositório local pelo RStudio
@@ -358,7 +357,7 @@ usethis::create_project(path = "C:/Users/MMF/Desktop/nome_do_repo2")
 - Vamos usar a função `use_git()` para realizar o nosso primeiro `commit` (salvar nossos arquivos na linha do tempo) e dar inicio ao nosso repositório.
 
 .center[
-<img src="figs/arquivos_repo.png">
+<img src="images/fig/arquivos_repo.png">
 ]
 
   - Quando realizamos um `commit` na linha do tempo, é importante descrever a mudança que foi realizada no(s) arquivo(s). 
@@ -415,7 +414,7 @@ usethis::use_git(message = "Initial commit")
 ## Do Git local para o GitHub
 
 .center[
-<img src="figs/repo_remoto.jpg" style="width:100%;"/>
+<img src="images/fig/repo_remoto.jpg" style="width:100%;"/>
 ]
 
 ---
@@ -483,11 +482,11 @@ usethis::use_readme_md() #somente markdown
 
 - Após a execução da função, abrirá um arquivo chamado "README.md". Faça as alterações que você achar necessário e salve o arquivo. 
 
-![](figs/readme.gif)
+![](images/fig/readme.gif)
 ---
 ## Subir o README.md no GitHub 
 
-<img src="figs/Slide23.png" style="width:90%;"/>
+<img src="images/fig/Slide23.png" style="width:90%;"/>
 
 ---
 ## Subir o README.md no GitHub 
@@ -551,35 +550,35 @@ usethis::pr_push()
 ---
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;">
 
-<img src="figs/modificacoes.png">
+<img src="images/fig/modificacoes.png">
 
 
 ---
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;">
 
-<img src="figs/modificacoes2.png">
+<img src="images/fig/modificacoes2.png">
 
 ---
 
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;">
 
-<img src="figs/modificacoes3.png">
+<img src="images/fig/modificacoes3.png">
 
 ---
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;">
 
-<img src="figs/modificacoes4.png">
+<img src="images/fig/modificacoes4.png">
 
 ---
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;">
 
-<img src="figs/modificacoes5.png">
+<img src="images/fig/modificacoes5.png">
 
 ---
 
 <div class="background" style="width: 1000px; height: 700px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;">
 
-<img src="figs/modificacoes6.png">
+<img src="images/fig/modificacoes6.png">
 
 ---
 ## Convidar um colaborar para o projeto GitHub
@@ -588,7 +587,7 @@ usethis::pr_push()
   - No seu repo, vá em `Settings` > `Manage access` > `invite a collaborator`.
   - Escreve o nome do colaborador/a (como aparece no *GitHub* ou a *@* dele/a).
 
-<img src="figs/colab.png">
+<img src="images/fig/colab.png">
 
 ---
 ## Finalizar a `branch` criada
@@ -608,13 +607,13 @@ usethis::pr_finish()
 ---
 ## Do GitHub para o Git local
 .center[
-<img src="figs/vimos.png" style="width:80%;"/>
+<img src="images/fig/vimos.png" style="width:80%;"/>
 ]
 
 ---
 ## Do GitHub para o Git local
 .center[
-<img src="figs/veremos.png" style="width:80%;"/>
+<img src="images/fig/veremos.png" style="width:80%;"/>
 ]
 
 
@@ -774,7 +773,7 @@ class: inverse, center, middle
 ### `history`
 
 .center[
-<img src="figs/history_1.gif">
+<img src="images/fig/history_1.gif">
 ]
 
 ---
@@ -834,7 +833,7 @@ class: center, middle
 
 # Agradecimentos
 
-### [R-Ladies Fortaleza](https://www.meetup.com/pt-BR/rladies-fortaleza/events/275030815/) 💙
+### [R-Ladies Recife](https://www.meetup.com/pt-BR/rladies-recife/) 💙
 ### [Grupo de Estudos em Ciência de Dados (GECD)](https://github.com/gecdfoz/GECD) 💛
 ### [Beatriz Milz](https://github.com/beatrizmilz) 💚
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Análise multivariada on Marília Melo Favalesso</title>
+    <link>https://mmfava.netlify.app/categories/an%C3%A1lise-multivariada/</link>
+    <description>Recent content in Análise multivariada on Marília Melo Favalesso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 03 Sep 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://mmfava.netlify.app/categories/an%C3%A1lise-multivariada/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mini-curso de Ecologia Numérica</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-mini-curso-de-ecologia-n%C3%BAmerica/</link>
+      <pubDate>Sat, 03 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-mini-curso-de-ecologia-n%C3%BAmerica/</guid>
+      <description>Em 2016 ministrei, em parceria com minha querida colega Thais Sobjak, um minicurso de Ecologia numérica para os graduandos de Ciência Biológicas da Universidade Estadual do Oeste do Paraná (UNIOESTE). O curso foi bem básico e apresentei os conceitos e práticas de PCA e Cluster em R. A Thais ensinou a parte de índices ecológicos.
+Na sequência, disponibilizo os materiais que utilizei.
+Dia 1:Análise de componentes principais (PCA)Dia 2:Análise de agrupamento (cluster)Dia 3:Índices de diversidadeParte da Thaís</description>
+    </item>
+    
+  </channel>
+</rss>

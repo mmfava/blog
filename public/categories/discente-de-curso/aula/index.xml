@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Discente de curso/aula on Marília Melo Favalesso</title>
+    <link>https://mmfava.netlify.app/categories/discente-de-curso/aula/</link>
+    <description>Recent content in Discente de curso/aula on Marília Melo Favalesso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language><atom:link href="https://mmfava.netlify.app/categories/discente-de-curso/aula/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trabalho final curso do ENAP</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-trabalhofinal-enap/</link>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-trabalhofinal-enap/</guid>
+      <description>DetalhesNas últimas três semanas, participei de um curso que visava capacitar profissionais e usuários de R para o ensino de estatística introdutória nessa línguagem. Ao final do período, todos os participantes apresentaram uma aula, sendo a minha a seguinte:
+Slides</description>
+    </item>
+    
+  </channel>
+</rss>

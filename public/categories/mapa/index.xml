@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mapa on Marília Melo Favalesso</title>
+    <link>https://mmfava.netlify.app/categories/mapa/</link>
+    <description>Recent content in Mapa on Marília Melo Favalesso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://mmfava.netlify.app/categories/mapa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Como fazer um mapa animado com dados do IBGE</title>
+      <link>https://mmfava.netlify.app/talk/2021-08-14-aniversario-ibge/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-08-14-aniversario-ibge/</guid>
+      <description>Trabalhando ou não com dados, com certeza você já deve ter ouvido falar sobre o nosso Instituto Brasileiro de Geografia e Estatística (IBGE). O IBGE é uma entidade da administração pública federal, vinculada ao Ministério da Economia, responsável por prover todas as informações estatísticas oficiais do nosso país. Através do seu trabalho analítico, o IBGE nos fornece informações espaço-temporais importantes, como dados sociodemográficos, de ocupação e de uso da terra, sobre a indústria, o meio ambiente e a agricultura, além de cartas e mapas com delimitações do território brasileiro.</description>
+    </item>
+    
+  </channel>
+</rss>
