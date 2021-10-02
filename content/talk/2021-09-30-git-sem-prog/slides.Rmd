@@ -1,5 +1,5 @@
 ---
-title: "Git sem programação"
+title: "Git e GitHub sem programação"
 subtitle: <img src="figs/github_desktop.png" style="width:20%;"/> 
 author: 
   - "Marília Melo Favalesso"
