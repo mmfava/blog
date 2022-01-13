@@ -5,7 +5,8 @@
     <link>https://mmfava.netlify.app/categories/bioestat%C3%ADstica/</link>
     <description>Recent content in Bioestatística on Marília Melo Favalesso</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt</language><atom:link href="https://mmfava.netlify.app/categories/bioestat%C3%ADstica/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt</language>
+    <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mmfava.netlify.app/categories/bioestat%C3%ADstica/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Soma dos Quadrados</title>
       <link>https://mmfava.netlify.app/project/soma/</link>
@@ -13,6 +14,15 @@
       
       <guid>https://mmfava.netlify.app/project/soma/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Um papo sobre a profissão &#34;bioestatística&#34;</title>
+      <link>https://mmfava.netlify.app/talk/2021-10-05-entrevistadraanatbfuimaraes/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2021-10-05-entrevistadraanatbfuimaraes/</guid>
+      <description>Conversei com a Profa. Dra. Ana T. B. Guimarães sobre o papel do profissional bioestatístico na academia e no mercado. Vem ouvir esse papo :D</description>
     </item>
     
   </channel>

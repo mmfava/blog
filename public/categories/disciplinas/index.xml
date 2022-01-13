@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disciplinas on Marília Melo Favalesso</title>
+    <link>https://mmfava.netlify.app/categories/disciplinas/</link>
+    <description>Recent content in Disciplinas on Marília Melo Favalesso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Tue, 12 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://mmfava.netlify.app/categories/disciplinas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trabalhos da disciplina de análise multivariada</title>
+      <link>https://mmfava.netlify.app/talk/2022-01-13-rda/</link>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmfava.netlify.app/talk/2022-01-13-rda/</guid>
+      <description>Em 2016 fiz o curso de “Análises Multivariadas”, ministrada pela professora Dra. Luciana Guedes. Fui aprovada com nota máxima, correspondente a 90-100% de aproveitamento na disciplina (“A”).
+Trabalho 1Trabalho 1 em .docx
+Script R
+Trabalho 2Script R
+Seminário - Análise RDASlides em PDF
+Script R
+ProvaProva em .docx
+Script R
+</description>
+    </item>
+    
+  </channel>
+</rss>
