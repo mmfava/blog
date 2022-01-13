@@ -17,6 +17,16 @@ show_post_time: false
 title: Git e GitHub sem programação
 ---
 
+
+## Sobre o evento
+
+Chegou OUTUBRO e é com muita alegria que anunciamos a 2ª edição do Hacktoberfest GECD e GDG Foz do Iguaçu (aquele momento em que faremos nossas contribuições e, assim, vamos ganhar mais conhecimento... além de garantir a bela camiseta enviada à todos que participam do evento e cumprem os requisitos hehehe).
+
+Nessa edição nos juntaremos ONLINE para fazer nossas contribuições aos diversos projetos Open Source que estão precisando de ajuda.
+
+Se você ainda não sabe quais projetos contribuir não se preocupe, nós da organização estamos montando uma lista com projetos legais para levar como opção (e também podemos achar algum projeto lá na hora). E se você já sabe em qual projeto quer contribuir, pode vir também! Tem espaço para todo mundo! Estaremos todos lá com o mesmo propósito: Contribuir com a comunidade, aprender e ajudar uns aos outros :)
+
+
 ## Slides
 
 ```{r echo=FALSE}
@@ -24,3 +34,7 @@ knitr::include_url('slides.html')
 ```
 
 [Download em PDF](slides.pdf)
+
+## Vídeo no YouTube
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SPy09HfHYh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
