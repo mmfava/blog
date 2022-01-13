@@ -1,0 +1,37 @@
+---
+author: Marília Melo Favalesso
+categories:
+- Disciplinas
+date: "2016-04-12"
+draft: false
+featured: true
+layout: single
+location: Virtual
+show_post_time: false
+title: "Trabalhos da disciplina de análise multivariada"
+---
+
+Em 2016 fiz  o curso de “Análises Multivariadas”, ministrada pela professora Dra. Luciana Guedes. Fui aprovada com nota máxima, correspondente a 90-100% de aproveitamento na disciplina (“A”).
+
+## Trabalho 1
+
+[Trabalho 1 em .docx](trabalho1.docx)
+
+[Script R](trabalho1.R)
+
+## Trabalho 2
+
+[Script R](trabalho2.R)
+
+## Seminário - Análise RDA
+
+[Slides em PDF](apresentacao.pdf)
+
+[Script R](script_RDA.R)
+
+## Prova
+
+[Prova em .docx][prova.docx]
+
+[Script R](prova.R)
+
