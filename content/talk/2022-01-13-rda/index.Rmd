@@ -31,7 +31,7 @@ Em 2016 fiz  o curso de “Análises Multivariadas”, ministrada pela professor
 
 ## Prova
 
-[Prova em .docx][prova.docx]
+[Prova em .docx](prova.docx)
 
 [Script R](prova.R)
 
